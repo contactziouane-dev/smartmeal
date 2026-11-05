@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMARTMEAL | Bien plus qu'un distributeur automatique</title>
+  <meta name="description" content="SMARTMEAL associe la distribution alimentaire intelligente à un réseau d'écrans publicitaires numériques connectés (SMARTMEAL ADS). Projet porté par Ziouane Fethi & Mejdoub El Mahdi.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet (Mode Clair Technologique) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Barre de progression au scroll -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAVIGATION PRINCIPALE -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 22V12" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 7L12 12L3 7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>SMARTMEAL</span>
+        <span class="brand-badge">ADS</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#introduction" class="nav-link">Introduction</a></li>
+          <li><a href="#probleme" class="nav-link">Le Problème</a></li>
+          <li><a href="#solution" class="nav-link">Notre Solution</a></li>
+          <li><a href="#distributeurs" class="nav-link">Nos Distributeurs</a></li>
+          <li><a href="#implantations" class="nav-link">Implantations</a></li>
+          <li><a href="#fonctionnement" class="nav-link">SmartMeal Ads</a></li>
+          <li><a href="#plateforme" class="nav-link">Plateforme</a></li>
+          <li><a href="#modele" class="nav-link">Modèle Économique</a></li>
+          <li><a href="#technologie" class="nav-link">Architecture</a></li>
+          <li><a href="#fondateurs" class="nav-link">Fondateurs</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#plateforme" class="btn btn-primary btn-sm">Simulateur Ads</a>
+        <button class="mobile-menu-toggle" aria-label="Menu Mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       SECTION 1 : PAGE D'ACCUEIL (HERO SECTION)
+       ======================================================================= -->
+  <section id="hero" class="hero">
+    <div class="container">
+      
+      <!-- BANDEAU D'INTRODUCTION & NOTE DES FONDATEURS AU CHEF DE DÉPARTEMENT -->
+      <div id="introduction" class="founders-intro-banner">
+        <div class="founders-intro-grid">
+          <div class="founders-avatar-badge">
+            👨‍💻👨‍💻
+          </div>
+          <div class="founders-intro-text">
+            <h4>
+              <span>Mot des Fondateurs : Ziouane Fethi &amp; Mejdoub El Mahdi</span>
+              <span class="badge-status-pfe">Projet Actif &bull; 2 Mois de Travaux</span>
+            </h4>
+            <p>
+              « Je m'appelle <strong>Ziouane Fethi</strong> et mon binôme est <strong>Mejdoub El Mahdi</strong>. Nous travaillons activement sur ce projet depuis deux mois. Durant cette première phase d'ingénierie, nous avons déjà développé un <strong>premier prototype fonctionnel</strong> dédié à la technologie de communication et de pilotage avec le distributeur (cartes électroniques, liaisons de données et interfaçage des écrans). Aujourd'hui, nous avons besoin de soutien et de financements pour fabriquer l'infrastructure complète à échelle réelle. Mais le schéma d'ingénierie, l'architecture logicielle et les chemins précis à suivre sont déjà parfaitement clairs et construits dans nos têtes. »
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="prototype-tag-pill">
+              <span style="color: #059669;">✔</span> Prototype communication validé
+            </div>
+            <div class="prototype-tag-pill">
+              <span style="color: #0284c7;">🎯</span> Recherche de financements
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            Projet Innovant &bull; Ingénierie & Distribution Connectée
+          </div>
+
+          <h1 class="hero-title">
+            SMART<span class="text-gradient">MEAL</span>
+          </h1>
+
+          <span class="hero-slogan">
+            « Bien plus qu'un distributeur automatique. »
+          </span>
+
+          <p class="hero-text">
+            SMARTMEAL est un concept de startup qui associe la distribution automatique de produits alimentaires à un réseau de supports publicitaires numériques intégrés aux distributeurs. Une solution qui transforme chaque point de distribution en une nouvelle opportunité de communication commerciale.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#solution" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Découvrir le concept
+            </a>
+            <a href="#plateforme" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Explorer la plateforme publicitaire
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>2 en 1</h4>
+              <p>Service Alimentaire + Régie Pub</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Écrans Physiques Intégrés</p>
+            </div>
+            <div class="stat-item">
+              <h4>SaaS</h4>
+              <p>Réservation & Pilotage Cloud</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-card" data-photo="overview" title="Cliquer pour agrandir la photographie">
+            <img src="images/smartmeal-overview.jpg" alt="Distributeur SmartMeal avec écrans publicitaires et interfaces web/mobile" loading="eager">
+            
+            <div class="hero-floating-badge badge-top-left">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <div>
+                <p style="font-size: 0.72rem; color: #64748b; text-transform: uppercase;">Infrastructure</p>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Double Écran HD Latéral</strong>
+              </div>
+            </div>
+
+            <div class="hero-floating-badge badge-bottom-right">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <p style="font-size: 0.72rem; color: #64748b; text-transform: uppercase;">Innovation Business</p>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Monétisation Publicitaire</strong>
+              </div>
+            </div>
+          </div>
+          <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">
+            🔍 Cliquez sur l'image pour l'examiner en haute résolution
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 2 : LE PROBLÈME (DOUBLE CONSTAT)
+       ======================================================================= -->
+  <section id="probleme" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Analyse du Besoin</span>
+        <h2 class="section-title">Deux Défis du Quotidien, <span class="text-gradient">Une Solution Synergique</span></h2>
+        <p class="section-desc">
+          Notre analyse sur le terrain dans les campus et les établissements a mis en lumière deux problématiques complémentaires qui ne trouvent pas de réponse intégrée dans les dispositifs traditionnels.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+        <!-- Problème A -->
+        <div class="problem-card">
+          <div class="problem-icon-wrapper icon-red">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          </div>
+          <span style="font-size: 0.8rem; text-transform: uppercase; color: #dc2626; font-weight: 700; letter-spacing: 0.5px;">Défi Utilisateur</span>
+          <h3>Problème A : L'Accès aux Produits Alimentaires</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px;">
+            Dans les universités, hôpitaux, administrations ou entreprises, les usagers et le personnel font face à des contraintes horaires majeures :
+          </p>
+          <ul class="problem-list">
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Fermeture précoce des cafétérias traditionnelles en soirée ou les week-ends.</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Files d'attente interminables durant les courtes pauses intercours ou professionnelles.</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Manque d'options fraîches, variées et équilibrées à proximité immédiate des usagers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Problème B -->
+        <div class="problem-card card-b">
+          <div class="problem-icon-wrapper icon-blue">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <span style="font-size: 0.8rem; text-transform: uppercase; color: #0284c7; font-weight: 700; letter-spacing: 0.5px;">Défi Commercial</span>
+          <h3>Problème B : Les Opportunités Publicitaires Ciblées</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px;">
+            Les entreprises régionales recherchent des supports de communication visibles dans des lieux fréquentés et ciblés :
+          </p>
+          <ul class="problem-list">
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Panneaux d'affichage extérieurs traditionnels statiques, coûteux et sans flexibilité.</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Impossibilité pour un annonceur de cibler un établissement précis (étudiants en tech, corps médical, etc.).</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Absence de supports numériques interactifs situés exactement aux points d'attente et de convivialité.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 3 : NOTRE SOLUTION (Duo Piliers)
+       ======================================================================= -->
+  <section id="solution" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Notre Réponse</span>
+        <h2 class="section-title">Deux Piliers Complémentaires, <span class="text-gradient">Une Expérience Unique</span></h2>
+        <p class="section-desc">
+          SMARTMEAL fusionne la distribution automatisée de proximité avec la puissance de la communication visuelle numérique connectée.
+        </p>
+      </div>
+
+      <div class="solution-grid">
+        <!-- Pilier 1 -->
+        <div class="pillar-card">
+          <div class="pillar-img-wrap" data-photo="machine-detail" title="Examiner le distributeur alimentaire">
+            <img src="images/smartmeal-machine-detail.jpg" alt="SMARTMEAL FOOD - Distributeur de snacks et boissons">
+            <span class="pillar-badge-float">Pilier 1 &bull; Service</span>
+          </div>
+          <div class="pillar-content">
+            <h3>SMARTMEAL FOOD</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Un réseau de distributeurs automatiques nouvelle génération permettant l'achat rapide et sécurisé de produits alimentaires sélectionnés :
+            </p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">🥪 Sandwichs & Repas frais</span>
+              <span class="pillar-tag">🍪 Snacks & En-cas</span>
+              <span class="pillar-tag">🧃 Boissons fraîches</span>
+              <span class="pillar-tag">☕ Café haute qualité</span>
+              <span class="pillar-tag">💳 Paiement sans contact</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 18px;">
+              Objectif : Fournir une solution alimentaire hygiénique, disponible 24/7 dans les lieux à forte affluence.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilier 2 -->
+        <div class="pillar-card">
+          <div class="pillar-img-wrap" data-photo="overview" title="Examiner les écrans publicitaires SMARTMEAL ADS">
+            <img src="images/smartmeal-overview.jpg" alt="SMARTMEAL ADS - Écrans publicitaires numériques intégrés">
+            <span class="pillar-badge-float" style="border-color: #0284c7; color: #0284c7;">Pilier 2 &bull; Innovation</span>
+          </div>
+          <div class="pillar-content">
+            <h3>SMARTMEAL ADS</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              La véritable rupture technologique : de véritables écrans numériques haute définition intégrés physiquement à la carrosserie des distributeurs :
+            </p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">📺 Écran latéral gauche HD</span>
+              <span class="pillar-tag">📺 Écran latéral droit HD</span>
+              <span class="pillar-tag">🎬 Diffusion vidéo & dynamique</span>
+              <span class="pillar-tag">📡 Pilotage cloud à distance</span>
+              <span class="pillar-tag">📊 Statistiques de passages</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 18px;">
+              Important : Il ne s'agit pas de simples autocollants, mais d'une infrastructure d'affichage dynamique pilotée à distance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeau Synergie -->
+      <div class="synergy-banner">
+        <div class="synergy-text">
+          <h4>La Synergie SMARTMEAL : Pourquoi cette alliance fonctionne ?</h4>
+          <p>
+            L'utilisateur qui s'approche pour prendre un café ou un sandwich est naturellement exposé à l'écran latéral. Le distributeur amortit son implantation physique par la publicité, tout en offrant aux annonceurs un temps d'attention captif exceptionnel.
+          </p>
+        </div>
+        <a href="#fonctionnement" class="btn btn-outline btn-sm" style="white-space: nowrap;">Comprendre le mécanisme &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 4 : NOS DISTRIBUTEURS (GALERIE PHOTOGRAPHIQUE)
+       ======================================================================= -->
+  <section id="distributeurs" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Galerie Matérielle</span>
+        <h2 class="section-title">Configurations & Modèles <span class="text-gradient">Envisagés</span></h2>
+        <p class="section-desc">
+          Explorez les configurations matérielles issues de nos études de conception. Chaque modèle est adapté à son environnement d'accueil et à ses contraintes spatiales.
+        </p>
+      </div>
+
+      <!-- Filtres -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Tous les modèles</button>
+        <button class="filter-btn" data-filter="dual">Écrans Latéraux</button>
+        <button class="filter-btn" data-filter="coffee">Espace Café / Barista</button>
+        <button class="filter-btn" data-filter="medical">Santé & Médical</button>
+        <button class="filter-btn" data-filter="vision">Concepts & Vision 3D</button>
+      </div>
+
+      <!-- Grille des distributeurs -->
+      <div class="distributors-grid">
+        <!-- Carte 1 -->
+        <div class="distributor-card" data-category="dual">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-machine-detail.jpg" alt="Modèle Phare Duo-Écran">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="machine-detail" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Modèle Phare Duo-Écran</h4>
+            <p class="card-desc">
+              Configuration complète avec vitrine centrale réfrigérée pour sandwichs et boissons, encadrée par deux écrans verticaux haute luminosité (côté gauche et droit).
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Affichage :</span> <strong>2 x Écrans HD 43" verticaux</strong></div>
+              <div class="spec-line"><span>Capacité :</span> <strong>Snacks, Boissons, Frais</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Halls de campus, gares</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="distributor-card" data-category="coffee">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Kiosque Coffee Corner Lounge" style="object-position: center top;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Kiosque Coffee Corner Lounge</h4>
+            <p class="card-desc">
+              Architecture intégrant des lamelles de bois élégantes, un distributeur barista de café en grains et un grand écran publicitaire latéral portrait.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Affichage :</span> <strong>1 x Écran Grand Format</strong></div>
+              <div class="spec-line"><span>Spécialité :</span> <strong>Café moulu & Boissons chaudes</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Espaces détente, coworking</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="distributor-card" data-category="medical">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Modèle Hospitalier Finition Blanche" style="object-position: right top;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Modèle Santé & Hôpital</h4>
+            <p class="card-desc">
+              Carrosserie blanche épurée conçue pour les corridors hospitaliers. Écran latéral dédié à la diffusion de messages de santé publique et d'annonces de proximité.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Affichage :</span> <strong>Écran latéral antireflet</strong></div>
+              <div class="spec-line"><span>Hygiène :</span> <strong>Surfaces antimicrobiennes</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Hôpitaux, cliniques, urgences</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 4 -->
+        <div class="distributor-card" data-category="dual">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-overview.jpg" alt="Configuration Connectée SmartMeal Pro">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="overview" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Station Connectée SmartMeal Pro</h4>
+            <p class="card-desc">
+              Unité intégrant la télémétrie complète : niveau de stock en temps réel, capteurs thermiques et synchronisation continue avec la plateforme web publicitaire.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Connectivité :</span> <strong>Modem 4G/LTE sécurisé</strong></div>
+              <div class="spec-line"><span>Contrôleur :</span> <strong>Player d'affichage embarqué</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Grands flux de passage</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 5 -->
+        <div class="distributor-card" data-category="coffee">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Distributeur Compact Pause Café" style="object-position: 30% bottom;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Compact « Pause Café »</h4>
+            <p class="card-desc">
+              Encombrement réduit pour couloirs et administrations, combinant distribution automatisée de boissons chaudes et écran multimédia vertical.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Empreinte au sol :</span> <strong>Format compact (< 1 m²)</strong></div>
+              <div class="spec-line"><span>Affichage :</span> <strong>Écran latéral interactif</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Administrations, étages de bureaux</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 6 -->
+        <div class="distributor-card" data-category="vision">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Concept Visionnaire Holographique 3D" style="object-position: right bottom;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Concept Hologramme 3D (R&D)</h4>
+            <p class="card-desc">
+              Étude de faisabilité pour intégrer au sommet du distributeur un projecteur holographique à pales LED créant une animation visuelle flottante au-dessus de la machine.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Technologie :</span> <strong>Hologramme POV à pales LED</strong></div>
+              <div class="spec-line"><span>Statut :</span> <strong>Perspective d'évolution / R&D</strong></div>
+              <div class="spec-line"><span>Effet :</span> <strong>Attractivité visuelle à 360°</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 30px; font-style: italic;">
+        * Note académique : Les modèles présentés correspondent à nos concepts visuels et configurations matérielles étudiées. Ils illustrent la polyvalence d'implantation du système.
+      </p>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 5 : OÙ INSTALLER SMARTMEAL ?
+       ======================================================================= -->
+  <section id="implantations" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Stratégie d'Implantation</span>
+        <h2 class="section-title">Des Emplacements Stratégiques à <span class="text-gradient">Forte Fréquentation</span></h2>
+        <p class="section-desc">
+          Le succès de SMARTMEAL repose sur le choix minutieux des lieux d'installation, où la demande alimentaire est constante et l'audience publicitaire captive.
+        </p>
+      </div>
+
+      <div class="locations-container">
+        <!-- Navigation par onglets -->
+        <div class="locations-nav">
+          <div class="location-tab-btn active" data-location="university">
+            <div class="loc-icon">🎓</div>
+            <div class="loc-info">
+              <h4>Universités & Campus</h4>
+              <p>Facultés des sciences, technologie, médecine...</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="hospital">
+            <div class="loc-icon">🏥</div>
+            <div class="loc-info">
+              <h4>Hôpitaux & Cliniques</h4>
+              <p>Halls d'urgences, consultations et couloirs soignants</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="admin">
+            <div class="loc-icon">🏛️</div>
+            <div class="loc-info">
+              <h4>Administrations Publiques</h4>
+              <p>Directions ministérielles, préfectures et mairies</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="corporate">
+            <div class="loc-icon">💼</div>
+            <div class="loc-info">
+              <h4>Entreprises & Sièges Sociaux</h4>
+              <p>Parcs d'activités, tours tertiaires et centres d'affaires</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="transit">
+            <div class="loc-icon">✈️</div>
+            <div class="loc-info">
+              <h4>Transports & Aéroports</h4>
+              <p>Gares ferroviaires, aérogares et pôles d'échange</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boîte d'affichage dynamique -->
+        <div class="location-display-box">
+          <div class="location-display-img" data-photo="locations" title="Cliquer pour voir la planche d'implantation">
+            <img id="loc-display-img" src="images/smartmeal-locations.jpg" alt="Implantation SmartMeal dans différents lieux">
+          </div>
+          <div class="location-display-details">
+            <span class="loc-tag-badge" id="loc-display-tag">Enseignement Supérieur</span>
+            <h3 id="loc-display-title">Universités, Grandes Écoles & Campus</h3>
+            <p id="loc-display-desc" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Répondre aux besoins des étudiants et des enseignants qui ont des horaires chargés, tout en offrant aux annonceurs un accès direct et captif à la jeunesse estudiantine.
+            </p>
+
+            <div class="loc-grid-meta">
+              <div class="meta-box">
+                <h5>Public Concerné :</h5>
+                <p id="loc-display-public">Étudiants, enseignants, chercheurs et personnel administratif.</p>
+              </div>
+              <div class="meta-box">
+                <h5>Fréquentation Estimée :</h5>
+                <p id="loc-display-traffic">2 500 à 10 000+ passages quotidiens par campus.</p>
+              </div>
+              <div class="meta-box">
+                <h5>Intérêt Distribution :</h5>
+                <p id="loc-display-benefit">Disponibilité continue lors des révisions, examens et pauses intercours.</p>
+              </div>
+              <div class="meta-box">
+                <h5>Cible Annonceurs :</h5>
+                <p id="loc-display-ad">Idéal pour marques télécoms, applications, formations, banques jeunes, snacking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 6 : COMMENT FONCTIONNE SMARTMEAL ADS ? (5 ÉTAPES)
+       ======================================================================= -->
+  <section id="fonctionnement" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Parcours Annonceur</span>
+        <h2 class="section-title">Comment Fonctionne <span class="text-gradient">SMARTMEAL ADS ?</span></h2>
+        <p class="section-desc">
+          Une plateforme libre-service intuitive pensée pour simplifier la réservation d'espaces publicitaires numériques en 5 étapes fluides.
+        </p>
+      </div>
+
+      <!-- Stepper en 5 cartes -->
+      <div class="steps-stepper">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Choisir un Lieu</h4>
+          <p>L'annonceur explore la carte géographique et cible un établissement (Université, Hôpital, Entreprise...).</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Choisir la Machine</h4>
+          <p>Il sélectionne le distributeur précis installé dans le hall ou le couloir le plus fréquenté.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Sélectionner l'Écran</h4>
+          <p>Il choisit l'orientation de son affichage : écran latéral droit, latéral gauche ou façade.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Créer la Campagne</h4>
+          <p>Il importe son clip vidéo ou son visuel haute définition et définit les dates de diffusion.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h4>Confirmer & Suivre</h4>
+          <p>Validation transparente du budget et suivi en temps réel des passages sur son tableau de bord.</p>
+        </div>
+      </div>
+
+      <!-- Vitrine photos de l'application -->
+      <div class="step-showcase">
+        <div class="showcase-grid">
+          <div class="showcase-img-wrap" data-photo="mobile-3steps" title="Voir l'interface sur 3 smartphones">
+            <img src="images/mobile-3steps-flow.jpg" alt="3 smartphones montrant les étapes de planification de campagne">
+          </div>
+          <div class="showcase-content">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--brand-500); font-weight: 700;">Expérience Mobile & Web</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin: 8px 0 16px 0;">
+              Une Planification Fluide Directement sur Smartphone
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+              Comme le démontrent nos maquettes conceptuelles d'interfaces, l'annonceur accède à un système de réservation calqué sur les meilleurs standards du numérique : calendrier interactif des disponibilités, calcul automatique des créneaux et validation instantanée.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#plateforme" class="btn btn-primary btn-sm">Tester le simulateur en direct &darr;</a>
+              <button class="btn btn-outline btn-sm" data-photo="mobile-calendar">Voir le calendrier mobile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 7 : DÉCOUVRIR LA PLATEFORME (SIMULATEUR INTERACTIF)
+       ======================================================================= -->
+  <section id="plateforme" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Démonstration Interactive</span>
+        <h2 class="section-title">Simulateur de Réservation <span class="text-gradient">SMARTMEAL ADS</span></h2>
+        <p class="section-desc">
+          Testez vous-même le parcours d'un annonceur : choisissez un établissement, personnalisez votre spot et visualisez en temps réel son rendu sur l'écran du distributeur virtuel.
+        </p>
+      </div>
+
+      <!-- Galerie des interfaces réelles -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+        <div class="glass-card" style="padding: 20px; cursor: pointer;" data-photo="platform-dashboard" title="Agrandir l'interface web SaaS">
+          <img src="images/platform-laptop-dashboard.jpg" alt="Tableau de bord SmartMeal Pro sur MacBook" style="width: 100%; border-radius: 10px; margin-bottom: 12px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">Portail Web Annonceur &bull; SmartMeal Pro</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">Formulaire de saisie de campagne sur grand écran avec cartographie des distributeurs.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 20px; cursor: pointer;" data-photo="mobile-planner" title="Agrandir l'interface mobile">
+          <img src="images/mobile-interactive-planner.jpg" alt="Application mobile SmartMeal Campaign Planner" style="width: 100%; border-radius: 10px; margin-bottom: 12px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">Application Mobile &bull; Campaign Planner</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">Gestion géolocalisée et validation rapide depuis un smartphone sur le terrain.</p>
+        </div>
+      </div>
+
+      <!-- Le Simulateur Interactif Fonctionnel -->
+      <div class="simulator-wrapper">
+        <div class="simulator-header">
+          <div class="sim-title-group">
+            <h3>Console de Simulation de Campagne</h3>
+            <p>Module interactif de prévisualisation publicitaire pour jurys et partenaires</p>
+          </div>
+          <span class="sim-badge-demo">Démonstration Interactive Locale</span>
+        </div>
+
+        <div class="simulator-body">
+          <!-- Contrôles du simulateur -->
+          <div class="simulator-controls">
+            <!-- Choix établissement -->
+            <div class="form-group-sim">
+              <label for="sim-select-location">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                1. Établissement et Distributeur Cible :
+              </label>
+              <select id="sim-select-location">
+                <option value="Université d'Oran - Faculté de Technologie (Distributeur U-001)">Université d'Oran - Faculté de Technologie (Distributeur U-001)</option>
+                <option value="Hôpital 1er Novembre - Hall Central des Consultations (Distributeur H-002)">Hôpital 1er Novembre - Hall Central (Distributeur H-002)</option>
+                <option value="Direction des Services Administratifs (Distributeur A-003)">Direction des Services Administratifs (Distributeur A-003)</option>
+                <option value="Centre d'Affaires & Tour Tertiaire (Distributeur E-004)">Centre d'Affaires & Tour Tertiaire (Distributeur E-004)</option>
+                <option value="Aéroport International - Terminal Principal (Distributeur T-005)">Aéroport International - Terminal (Distributeur T-005)</option>
+              </select>
+            </div>
+
+            <!-- Choix écran -->
+            <div class="form-group-sim">
+              <label>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                2. Emplacement de l'Écran Numérique :
+              </label>
+              <div class="screen-picker-grid">
+                <div class="screen-choice-btn active" data-screen="Écran Latéral Droit">Écran Latéral Droit</div>
+                <div class="screen-choice-btn" data-screen="Écran Latéral Gauche">Écran Latéral Gauche</div>
+                <div class="screen-choice-btn" data-screen="Écran Façade Supérieure">Écran Façade</div>
+              </div>
+            </div>
+
+            <!-- Choix de l'annonce d'exemple -->
+            <div class="form-group-sim">
+              <label>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                3. Sélectionner un Visuel d'Annonceur (ou saisir le vôtre) :
+              </label>
+              <div class="custom-ad-selector">
+                <div class="ad-preset-btn active" data-preset="moment">MOMENT Chocolat</div>
+                <div class="ad-preset-btn" data-preset="juice">FreshJuice Bio</div>
+                <div class="ad-preset-btn" data-preset="campus">Campus Tech</div>
+                <div class="ad-preset-btn" data-preset="coffee">Smart Barista</div>
+              </div>
+              <input type="text" id="sim-custom-text" placeholder="Ou tapez un slogan personnalisé pour tester..." style="margin-top: 8px;">
+            </div>
+
+            <!-- Choix de la durée -->
+            <div class="form-group-sim">
+              <label>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                4. Durée de la Campagne de Diffusion :
+              </label>
+              <div class="duration-selector">
+                <div class="duration-btn" data-days="3">3 Jours</div>
+                <div class="duration-btn" data-days="7">7 Jours</div>
+                <div class="duration-btn active" data-days="15">15 Jours</div>
+                <div class="duration-btn" data-days="30">30 Jours</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rendu de prévisualisation et devis indicatif -->
+          <div class="simulator-preview">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--brand-500);">
+                  Rendu Visuel sur l'Écran
+                </span>
+                <span id="sim-screen-side-label" style="font-size: 0.75rem; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
+                  Écran Latéral Droit
+                </span>
+              </div>
+
+              <!-- Écran virtuel dynamique -->
+              <div class="virtual-machine-stage">
+                <div class="machine-mockup-frame">
+                  <div class="virtual-screen-slot">
+                    <div id="sim-screen-content" class="virtual-screen-content" style="background: linear-gradient(135deg, #2b1810 0%, #170d09 100%);">
+                      <span id="sim-screen-badge" style="font-size: 0.65rem; font-weight: 800; color: #f59e0b; text-transform: uppercase; margin-bottom: 6px;">Spot Vidéo 15s HD</span>
+                      <h5 id="sim-screen-title" style="color: #fff;">MOMENT Chocolat Noir</h5>
+                      <p id="sim-screen-slogan" style="color: #e2e8f0;">L'intensité du cacao pur pour recharger vos journées !</p>
+                    </div>
+                  </div>
+                  <div style="font-size: 0.65rem; color: #94a3b8; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.8px;">
+                    Distributeur Connecté SMARTMEAL
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Récapitulatif indicatif -->
+            <div class="recap-card">
+              <h4>
+                <span>Récapitulatif de la Campagne</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </h4>
+              <div class="recap-row">
+                <span>Site ciblé :</span>
+                <strong id="recap-location" style="max-width: 200px; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Université d'Oran</strong>
+              </div>
+              <div class="recap-row">
+                <span>Support :</span>
+                <strong id="recap-screen">Écran Latéral Droit</strong>
+              </div>
+              <div class="recap-row">
+                <span>Période :</span>
+                <strong id="recap-duration">15 jours</strong>
+              </div>
+              <div class="recap-row">
+                <span>Fréquence estimée :</span>
+                <strong id="recap-spots">~720 passages (env. 48/jour)</strong>
+              </div>
+
+              <div class="recap-total">
+                <span>Budget Estimé :</span>
+                <strong id="recap-total">165 € HT (Simulation)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 8 : NOTRE MODÈLE ÉCONOMIQUE
+       ======================================================================= -->
+  <section id="modele" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Viabilité Financière</span>
+        <h2 class="section-title">Un Modèle Économique à <span class="text-gradient">Double Flux de Revenus</span></h2>
+        <p class="section-desc">
+          En mariant vente physique de produits alimentaires et commercialisation d'espaces publicitaires numériques, SMARTMEAL diversifie ses rentrées et maximise la rentabilité de chaque distributeur implanté.
+        </p>
+      </div>
+
+      <div class="business-grid">
+        <!-- Flux 1 -->
+        <div class="business-card">
+          <span class="revenue-badge">Source de Revenus N°1</span>
+          <h3>Distribution Alimentaire & Snacking</h3>
+          <p>
+            Revenus traditionnels issus de la marge commerciale directe sur les produits consommés quotidiennement :
+          </p>
+          <ul class="problem-list" style="margin-bottom: 20px;">
+            <li><span class="bullet" style="color: var(--brand-500);">&check;</span> Vente au détail de sandwichs, salades fraîches et plats préparés.</li>
+            <li><span class="bullet" style="color: var(--brand-500);">&check;</span> Vente de boissons chaudes (café expresso de qualité, thés, chocolats).</li>
+            <li><span class="bullet" style="color: var(--brand-500);">&check;</span> Vente de boissons fraîches, jus pressés, eaux minérales et snacks.</li>
+          </ul>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+            <strong>Levier :</strong> Rotation rapide des stocks grâce à l'affluence continue des campus et administrations.
+          </div>
+        </div>
+
+        <!-- Flux 2 -->
+        <div class="business-card">
+          <span class="revenue-badge" style="border-color: #0284c7; color: #0284c7; background: #f0f9ff;">Source de Revenus N°2</span>
+          <h3>Régie Publicitaire Numérique (SmartMeal Ads)</h3>
+          <p>
+            Monétisation de l'attention visuelle générée autour des machines grâce à la location d'espaces écrans programmables :
+          </p>
+          <ul class="problem-list" style="margin-bottom: 20px;">
+            <li><span class="bullet" style="color: #0284c7;">&check;</span> Réservations de campagnes sur mesure par les annonceurs locaux et nationaux.</li>
+            <li><span class="bullet" style="color: #0284c7;">&check;</span> Tarification dynamique selon la durée (courte durée, hebdomadaire, mensuelle).</li>
+            <li><span class="bullet" style="color: #0284c7;">&check;</span> Forfaits multi-machines pour une couverture à l'échelle d'une ville ou d'une région.</li>
+          </ul>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+            <strong>Levier :</strong> Rentabilisation complémentaire à coût marginal quasi nul une fois l'écran installé.
+          </div>
+        </div>
+      </div>
+
+      <!-- Formules commerciales -->
+      <div class="commercial-options-grid">
+        <div class="comm-opt-box">
+          <h5>Campagnes Événementielles</h5>
+          <p>Diffusion ciblée de 3 à 5 jours pour salons, lancements de produits ou portes ouvertes.</p>
+        </div>
+        <div class="comm-opt-box">
+          <h5>Diffusion Longue Durée</h5>
+          <p>Visibilité institutionnelle continue sur 1 à 6 mois pour ancrer la notoriété d'une marque.</p>
+        </div>
+        <div class="comm-opt-box">
+          <h5>Pack Réseau Multi-Sites</h5>
+          <p>Campagne synchronisée sur 5, 10 ou 20 distributeurs répartis sur l'ensemble d'une agglomération.</p>
+        </div>
+        <div class="comm-opt-box">
+          <h5>Partenariats Exclusifs</h5>
+          <p>Sponsoring exclusif d'un distributeur avec habillage de marque et exclusivité sectorielle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 9 : ARCHITECTURE ET DIMENSION TECHNOLOGIQUE
+       ======================================================================= -->
+  <section id="technologie" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Vision Ingénieur</span>
+        <h2 class="section-title">Architecture Système & <span class="text-gradient">Dimension Technique</span></h2>
+        <p class="section-desc">
+          En tant qu'étudiants ingénieurs, nous avons structuré SMARTMEAL autour d'une architecture modulaire associant électromécanique industrielle, électronique embarquée et infrastructure cloud.
+        </p>
+      </div>
+
+      <div class="tech-diagram">
+        <!-- Bloc Physique / Embarqué -->
+        <div class="tech-block">
+          <div class="tech-block-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/></svg>
+            Partie Physique & Automate
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <i>⚙️</i>
+              <div>
+                <strong>Automate de distribution :</strong> Gestion des moteurs hélicoïdaux et poussoirs de délivrance des produits (déjà éprouvé sur notre banc de test).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>❄️</i>
+              <div>
+                <strong>Régulation thermique :</strong> Capteurs et asservissement de température pour maintien de la chaîne du froid (3°C - 5°C).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>💳</i>
+              <div>
+                <strong>Système d'encaissement :</strong> Monnayeur électronique et lecteur bancaire sans contact (NFC).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>🖥️</i>
+              <div>
+                <strong>Écrans numériques intégrés :</strong> Dalles industrielles haute luminosité protégées contre le vandalisme.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pont de connexion -->
+        <div class="tech-bridge">
+          <div class="bridge-pulse">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">IoT & 4G/LTE</span>
+        </div>
+
+        <!-- Bloc Numérique / Cloud -->
+        <div class="tech-block">
+          <div class="tech-block-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            Partie Numérique & Cloud
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <i>🌐</i>
+              <div>
+                <strong>Plateforme SmartMeal Ads :</strong> Serveur centralisé de gestion des campagnes et planification des diffusions.
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>📡</i>
+              <div>
+                <strong>Passerelle de synchronisation :</strong> Transmission chiffrée des contenus médias et ordonnancement des playlists (technologie déjà testée sur prototype).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>📊</i>
+              <div>
+                <strong>Télémétrie en temps réel :</strong> Remontée instantanée des alertes de pannes et état des stocks.
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>🛡️</i>
+              <div>
+                <strong>Supervision sécurisée :</strong> Tableau de bord administrateur avec contrôle à distance des machines.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-quote">
+        « Une plateforme centralisée permettrait de gérer les campagnes publicitaires et de transmettre les contenus aux écrans des distributeurs connectés en temps réel, garantissant une flexibilité d'affichage totale pour nos partenaires annonceurs. »
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 10 : PERSPECTIVES D'ÉVOLUTION
+       ======================================================================= -->
+  <section id="perspectives" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Feuille de Route</span>
+        <h2 class="section-title">Perspectives d'Évolution & <span class="text-gradient">Innovations Futures</span></h2>
+        <p class="section-desc">
+          Notre projet est conçu avec une architecture évolutive qui permettra d'intégrer des technologies de pointe au fur et à mesure du développement de la startup.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 1</span>
+          <div style="font-size: 1.8rem;">🏙️</div>
+          <h4>Extension Régionale & Multi-Villes</h4>
+          <p>Déploiement progressif du réseau de distributeurs sur les principaux pôles universitaires et hospitaliers du pays.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 2</span>
+          <div style="font-size: 1.8rem;">📦</div>
+          <h4>Gestion Intelligente des Stocks</h4>
+          <p>Algorithmes prédictifs pour optimiser les tournées de réassort en fonction des pics de consommation par établissement.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 3</span>
+          <div style="font-size: 1.8rem;">👁️</div>
+          <h4>Mesure d'Audience Anonymisée</h4>
+          <p>Intégration de capteurs optiques respectueux de la vie privée (sans enregistrement) pour quantifier l'exposition réelle aux écrans.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 4</span>
+          <div style="font-size: 1.8rem;">📱</div>
+          <h4>Application Mobile Utilisateur</h4>
+          <p>Réservation à distance d'un produit, programme de fidélité et paiement mobile directement depuis son smartphone.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">R&D Future</span>
+          <div style="font-size: 1.8rem;">✨</div>
+          <h4>Affichage Holographique 3D</h4>
+          <p>Étude approfondie de faisabilité pour implémenter un dispositif visuel flottant au sommet des distributeurs haut de gamme.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Impact</span>
+          <div style="font-size: 1.8rem;">🌱</div>
+          <h4>Éco-Conception & Anti-Gaspillage</h4>
+          <p>Tarification dynamique en fin de journée pour réduire le gaspillage alimentaire sur les produits ultra-frais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 11 : LES FONDATEURS
+       ======================================================================= -->
+  <section id="fondateurs" class="section">
+    <div class="container">
+      <div class="founders-card">
+        <div class="founders-header">
+          <span class="section-tag" style="margin-bottom: 12px;">Porteurs du Projet</span>
+          <h3>Ziouane Fethi &amp; Mejdoub El Mahdi</h3>
+          <p class="subtitle">Étudiants Ingénieurs &bull; Innovateurs &bull; Porteurs du Projet SMARTMEAL</p>
+        </div>
+
+        <p class="founders-quote">
+          « Nous travaillons ensemble sur ce projet depuis deux mois. Notre premier prototype de communication avec le distributeur a prouvé la faisabilité technique du système. Aujourd'hui, avec le soutien et les financements adéquats, nous sommes prêts à concrétiser l'ensemble de l'architecture que nous avons déjà entièrement planifiée dans nos têtes. »
+        </p>
+
+        <div class="founders-pillars">
+          <div class="pillar-pill"><span>⚡</span> Innovation</div>
+          <div class="pillar-pill"><span>🔧</span> Ingénierie</div>
+          <div class="pillar-pill"><span>🤖</span> Automatisation</div>
+          <div class="pillar-pill"><span>🚀</span> Entrepreneuriat</div>
+          <div class="pillar-pill"><span>💡</span> Résolution de Problèmes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 12 : CONCLUSION & VISION
+       ======================================================================= -->
+  <section id="conclusion" class="section section-alt">
+    <div class="container">
+      <div class="conclusion-box">
+        <span class="section-tag" style="background: var(--brand-50); border-color: var(--brand-500); color: var(--brand-600);">Notre Vision d'Avenir</span>
+        
+        <h2>
+          « Et si un simple distributeur devenait à la fois un point de service et un nouveau média publicitaire ? »
+        </h2>
+
+        <p class="slogan">
+          SMARTMEAL &bull; « De la distribution à la communication, une nouvelle expérience connectée. »
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;">
+          <a href="#" class="btn btn-primary open-vision-modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Découvrir notre vision
+          </a>
+          <a href="#hero" class="btn btn-outline">
+            Revenir en haut &uarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>SMARTMEAL &bull; SMARTMEAL ADS</h4>
+          <p>
+            Plateforme et réseau de distributeurs automatiques connectés avec régie publicitaire intégrée. Présentation officielle du projet de startup.
+          </p>
+          <p style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
+            Porté par <strong>Ziouane Fethi</strong> &amp; <strong>Mejdoub El Mahdi</strong> &bull; Étudiants Ingénieurs.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#introduction">Mot des Fondateurs</a></li>
+            <li><a href="#probleme">Le Problème</a></li>
+            <li><a href="#solution">Notre Solution</a></li>
+            <li><a href="#distributeurs">Galerie Distributeurs</a></li>
+            <li><a href="#implantations">Lieux d'Implantation</a></li>
+            <li><a href="#fonctionnement">Fonctionnement Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technologies & Équipe</h5>
+          <ul class="footer-links">
+            <li><a href="#plateforme">Simulateur de Campagnes</a></li>
+            <li><a href="#modele">Modèle Économique</a></li>
+            <li><a href="#technologie">Architecture Technique</a></li>
+            <li><a href="#perspectives">Perspectives d'Évolution</a></li>
+            <li><a href="#fondateurs">Les Fondateurs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 SMARTMEAL. Tous droits réservés. Présentation académique de projet.
+        </div>
+        <div style="color: var(--brand-500); font-weight: 600;">
+          « Un distributeur. Deux expériences. Une nouvelle opportunité commerciale. »
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       MODAL 1 : LIGHTBOX PLEIN ÉCRAN POUR PHOTOGRAPHIES
+       ======================================================================= -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Fermer">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement photo SmartMeal">
+      <div class="lightbox-caption">
+        <h4 id="lightbox-title" style="color: #fff; font-size: 1.15rem; font-weight: 700; margin-bottom: 6px;"></h4>
+        <p id="lightbox-desc" style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.5;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 2 : FICHE SYNTHÈSE VISION & PITCH ACADÉMIQUE
+       ======================================================================= -->
+  <div id="vision-modal" class="lightbox-modal">
+    <div class="lightbox-content" style="background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid var(--border-brand); max-width: 720px; text-align: left; box-shadow: 0 25px 60px rgba(0,0,0,0.3);">
+      <button id="vision-close" class="lightbox-close" style="color: #0f172a; background: #e2e8f0;" aria-label="Fermer">&times;</button>
+      <span class="section-tag" style="margin-bottom: 12px;">Synthèse de Présentation</span>
+      <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 16px;">
+        La Vision SMARTMEAL devant le Jury
+      </h3>
+      <p style="color: #475569; line-height: 1.65; margin-bottom: 20px;">
+        Ce projet illustre l'application concrète des compétences d'ingénieurs au service d'un besoin de marché réel. SMARTMEAL ne se contente pas de distribuer des denrées : chaque machine devient un actif technologique rentabilisé par deux leviers indépendants.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+        <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #059669; border: 1px solid #e2e8f0; border-left-width: 4px;">
+          <strong style="color: #0f172a; font-size: 0.95rem;">1. Rigueur d'ingénierie & Prototype existant :</strong>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">Asservissement thermique, communication établie avec le distributeur et robustesse logicielle.</p>
+        </div>
+        <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #0284c7; border: 1px solid #e2e8f0; border-left-width: 4px;">
+          <strong style="color: #0f172a; font-size: 0.95rem;">2. Modèle d'affaires résilient :</strong>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">La régie publicitaire protège la rentabilité même en période de vacances ou de faible consommation.</p>
+        </div>
+        <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #7c3aed; border: 1px solid #e2e8f0; border-left-width: 4px;">
+          <strong style="color: #0f172a; font-size: 0.95rem;">3. Porteurs engagés & Roadmap limpide :</strong>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">Ziouane Fethi & Mejdoub El Mahdi : une équipe complémentaire avec une vision claire des prochaines étapes.</p>
+        </div>
+      </div>
+
+      <div style="text-align: right;">
+        <a href="#plateforme" class="btn btn-primary btn-sm" onclick="document.getElementById('vision-modal').classList.remove('active'); document.body.style.overflow='';">
+          Voir le simulateur de campagne &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script interactif -->
+  <script src="js/app.js"></script>
+</body>
+</html>
