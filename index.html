@@ -1,0 +1,3599 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMARTMEAL | Bien plus qu'un distributeur automatique</title>
+  <meta name="description" content="SMARTMEAL associe la distribution alimentaire intelligente à un réseau d'écrans publicitaires numériques connectés (SMARTMEAL ADS). Projet porté par Ziouane Fethi & Mejdoub El Mahdi.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet (Mode Clair Technologique) -->
+  <style>
+/* ==========================================================================
+   SMARTMEAL - SYSTÈME DE DESIGN & FEUILLES DE STYLE (MODE CLAIR / LIGHT THEME)
+   Charte graphique : Blanc pur, Gris clair technologique (#f8fafc, #f1f5f9),
+   Vert technologique émeraude (#059669, #10b981) & Ardoise sombre (#0f172a, #1e293b).
+   Auteurs : Ziouane Fethi & Mejdoub El Mahdi
+   ========================================================================== */
+
+:root {
+  --brand-50: #ecfdf5;
+  --brand-100: #d1fae5;
+  --brand-400: #10b981;
+  --brand-500: #059669; /* Émeraude professionnel */
+  --brand-600: #047857;
+  --brand-700: #065f46;
+  --brand-glow: rgba(5, 150, 105, 0.2);
+  --brand-subtle: rgba(5, 150, 105, 0.08);
+
+  --bg-deep: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfdfd;
+  --border-glass: #e2e8f0;
+  --border-brand: rgba(5, 150, 105, 0.35);
+
+  --text-primary: #0f172a;    /* Ardoise profonde ultra-lisible */
+  --text-secondary: #475569;  /* Gris texte moderne */
+  --text-muted: #64748b;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 10px 25px -5px rgba(5, 150, 105, 0.25);
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: var(--bg-deep);
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 90% 30%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
+}
+
+/* Scroll progress indicator */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #059669);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Conteneurs et Layouts */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 90px 0;
+  position: relative;
+}
+
+.section-alt {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+/* En-têtes de section */
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 55px auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-50);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  color: var(--brand-500);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.section-title span.text-gradient {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Cartes épurées modernes */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: var(--transition);
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+
+.glass-card:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 0 15px -3px var(--brand-glow);
+}
+
+/* Boutons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-500), var(--brand-600));
+  color: #ffffff;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #10b981, var(--brand-500));
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(5, 150, 105, 0.35);
+  color: #fff;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid #cbd5e1;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline:hover {
+  background: #f8fafc;
+  border-color: var(--brand-500);
+  color: var(--brand-500);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.86rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Navigation principale */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-badge {
+  background: var(--brand-500);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--brand-500);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: var(--brand-500);
+  border-radius: 2px;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   BANDEAU D'INTRODUCTION AUTHENTIQUE DES FONDATEURS
+   ========================================================================== */
+.founders-intro-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 28px 36px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.founders-intro-banner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--brand-500), #34d399);
+}
+
+.founders-intro-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.founders-avatar-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: var(--brand-50);
+  border: 1px solid var(--border-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: var(--brand-500);
+  box-shadow: var(--shadow-sm);
+}
+
+.founders-intro-text h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge-status-pfe {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--brand-100);
+  color: var(--brand-700);
+  padding: 3px 9px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.founders-intro-text p {
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.prototype-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* SECTION HERO */
+.hero {
+  min-height: 100vh;
+  padding: 140px 0 80px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: var(--brand-50);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  border-radius: 9999px;
+  color: var(--brand-600);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--brand-500);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(5, 150, 105, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.hero-slogan {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brand-500);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 34px;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-glass);
+}
+
+.stat-item h4 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.stat-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Image Hero interactive */
+.hero-visual-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 0 30px -5px var(--brand-glow);
+  cursor: pointer;
+  transition: var(--transition);
+  background: #ffffff;
+}
+
+.hero-visual-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: var(--brand-500);
+  box-shadow: 0 25px 60px -10px rgba(15, 23, 42, 0.18), 0 0 40px -5px var(--brand-glow);
+}
+
+.hero-visual-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-floating-badge {
+  position: absolute;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.badge-top-left {
+  top: 20px;
+  left: 20px;
+  border-left: 3px solid var(--brand-500);
+}
+
+.badge-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  border-right: 3px solid #0284c7;
+}
+
+/* SECTION 2 : LE PROBLÈME */
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.problem-card {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.problem-card:hover {
+  border-color: #f87171;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.problem-card.card-b:hover {
+  border-color: #38bdf8;
+}
+
+.problem-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.icon-red {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.icon-blue {
+  background: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+.problem-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.problem-list {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.problem-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.problem-list li span.bullet {
+  color: #dc2626;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.problem-card.card-b .problem-list li span.bullet {
+  color: #0284c7;
+}
+
+/* SECTION 3 : NOTRE SOLUTION (Duo Piliers) */
+.solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 45px;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+
+.pillar-card:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 0 20px -5px var(--brand-glow);
+}
+
+.pillar-img-wrap {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.pillar-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.pillar-card:hover .pillar-img-wrap img {
+  transform: scale(1.04);
+}
+
+.pillar-badge-float {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-brand);
+  color: var(--brand-600);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-content {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-content h3 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.pillar-tag {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.synergy-banner {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.synergy-text h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.synergy-text p {
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+}
+
+/* SECTION 4 : NOS DISTRIBUTEURS (Galerie) */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--brand-500);
+  border-color: var(--brand-500);
+  color: #ffffff;
+}
+
+.distributors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.distributor-card {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+
+.distributor-card:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-thumb-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.card-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.distributor-card:hover .card-thumb-wrap img {
+  transform: scale(1.06);
+}
+
+.zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.distributor-card:hover .zoom-overlay {
+  opacity: 1;
+}
+
+.zoom-btn {
+  background: var(--brand-500);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: var(--transition);
+}
+
+.zoom-btn:hover {
+  transform: scale(1.1);
+  background: #10b981;
+}
+
+.card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.card-specs {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spec-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.spec-line strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* SECTION 5 : OÙ INSTALLER */
+.locations-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.locations-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-tab-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.location-tab-btn:hover {
+  background: #fcfdfd;
+  border-color: #cbd5e1;
+}
+
+.location-tab-btn.active {
+  background: var(--brand-50);
+  border-color: var(--brand-500);
+  box-shadow: 0 4px 15px -3px var(--brand-glow);
+}
+
+.loc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.location-tab-btn.active .loc-icon {
+  background: var(--brand-500);
+  color: #fff;
+}
+
+.loc-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.loc-info p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.location-display-box {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.location-display-img {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.location-display-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-display-details {
+  padding: 30px;
+}
+
+.loc-tag-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brand-600);
+  background: var(--brand-50);
+  border: 1px solid var(--border-brand);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.location-display-details h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.loc-grid-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.meta-box h5 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.meta-box p {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* SECTION 6 : COMMENT FONCTIONNE SMARTMEAL ADS (Parcours en 5 étapes) */
+.steps-stepper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.step-card {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-card:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand-50);
+  border: 1px solid var(--brand-500);
+  color: var(--brand-600);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.step-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.step-showcase {
+  background: #ffffff;
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  box-shadow: var(--shadow-lg);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.showcase-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+}
+
+.showcase-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SECTION 7 : SIMULATEUR INTERACTIF SMARTMEAL ADS */
+.simulator-wrapper {
+  background: #ffffff;
+  border: 1px solid rgba(5, 150, 105, 0.35);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 15px 45px -10px rgba(15, 23, 42, 0.1), 0 0 25px -5px var(--brand-glow);
+  margin-top: 36px;
+}
+
+.simulator-header {
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-glass);
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sim-title-group h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.sim-title-group p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.sim-badge-demo {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.simulator-body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0;
+}
+
+.simulator-controls {
+  padding: 36px;
+  border-right: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  background: #ffffff;
+}
+
+.form-group-sim {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group-sim label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group-sim select, .form-group-sim input[type="text"] {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group-sim select:focus, .form-group-sim input[type="text"]:focus {
+  border-color: var(--brand-500);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px var(--brand-subtle);
+}
+
+.screen-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.screen-choice-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.screen-choice-btn:hover {
+  background: #f1f5f9;
+}
+
+.screen-choice-btn.active {
+  background: var(--brand-50);
+  border-color: var(--brand-500);
+  color: var(--brand-600);
+  font-weight: 700;
+}
+
+.duration-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.duration-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.duration-btn.active {
+  background: var(--brand-500);
+  border-color: var(--brand-500);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.custom-ad-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.ad-preset-btn {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.ad-preset-btn.active {
+  background: #f0fdf4;
+  border-color: var(--brand-500);
+  color: var(--brand-600);
+  font-weight: 700;
+}
+
+/* Aperçu du simulateur */
+.simulator-preview {
+  padding: 36px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.virtual-machine-stage {
+  background: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.machine-mockup-frame {
+  width: 240px;
+  margin: 0 auto;
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 12px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.virtual-screen-slot {
+  height: 180px;
+  background: #0f172a;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.virtual-screen-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.4s ease;
+  color: #fff;
+}
+
+.virtual-screen-content h5 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.virtual-screen-content p {
+  font-size: 0.72rem;
+  opacity: 0.9;
+}
+
+.recap-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.recap-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recap-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.recap-row strong {
+  color: var(--text-primary);
+}
+
+.recap-total {
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 12px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recap-total span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.recap-total strong {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--brand-500);
+}
+
+/* SECTION 8 : MODÈLE ÉCONOMIQUE */
+.business-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.business-card {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.business-card:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.revenue-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--brand-600);
+  background: var(--brand-50);
+  border: 1px solid var(--border-brand);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.business-card h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.business-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.commercial-options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.comm-opt-box {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.comm-opt-box:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.comm-opt-box h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.comm-opt-box p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* SECTION 9 : ARCHITECTURE & DIMENSION INGÉNIEUR */
+.tech-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.tech-block {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.tech-block-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 22px;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.9rem;
+}
+
+.tech-item i {
+  color: var(--brand-500);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.tech-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--brand-500);
+}
+
+.bridge-pulse {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--brand-50);
+  border: 1px dashed var(--brand-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  animation: pulse-slow 3s infinite;
+}
+
+.tech-quote {
+  background: #f0fdf4;
+  border-left: 4px solid var(--brand-500);
+  padding: 24px 32px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #1e293b;
+  box-shadow: var(--shadow-sm);
+}
+
+/* SECTION 10 : PERSPECTIVES D'ÉVOLUTION */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.roadmap-card {
+  background: #ffffff;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: var(--transition);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.roadmap-card:hover {
+  border-color: var(--brand-500);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.roadmap-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brand-700);
+  background: var(--brand-50);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.roadmap-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 16px 0 8px 0;
+}
+
+.roadmap-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* SECTION 11 : LES FONDATEURS */
+.founders-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(5, 150, 105, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 50px;
+  max-width: 980px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.founders-header h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.founders-header p.subtitle {
+  color: var(--brand-500);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.founders-quote {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 740px;
+  margin: 0 auto 36px auto;
+  line-height: 1.7;
+}
+
+.founders-pillars {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.pillar-pill {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 8px 22px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-pill span {
+  color: var(--brand-500);
+}
+
+/* SECTION 12 : CONCLUSION & VISION */
+.conclusion-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid rgba(5, 150, 105, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 70px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.conclusion-box h2 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  max-width: 820px;
+  margin: 0 auto 20px auto;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.conclusion-box p.slogan {
+  font-size: 1.3rem;
+  color: var(--brand-600);
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid var(--border-glass);
+  padding: 60px 0 30px 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h4 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.footer-col h5 {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--brand-500);
+}
+
+.footer-bottom {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+
+/* MODAL LIGHTBOX POUR PHOTOS */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.lightbox-caption {
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 650px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.lightbox-close:hover {
+  background: var(--brand-500);
+}
+
+/* Responsive Queries */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text {
+    margin: 0 auto 34px auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-stats {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .distributors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps-stepper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .commercial-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tech-diagram {
+    grid-template-columns: 1fr;
+  }
+  .tech-bridge {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .simulator-body {
+    grid-template-columns: 1fr;
+  }
+  .simulator-controls {
+    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+  }
+  .founders-intro-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .founders-avatar-badge {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 65px 0;
+  }
+  .section-title {
+    font-size: 1.9rem;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-slogan {
+    font-size: 1.15rem;
+  }
+  .problem-grid, .solution-grid, .locations-container, .business-grid, .roadmap-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .distributors-grid {
+    grid-template-columns: 1fr;
+  }
+  .steps-stepper {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 24px;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    gap: 16px;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .synergy-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Barre de progression au scroll -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAVIGATION PRINCIPALE -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 22V12" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 7L12 12L3 7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>SMARTMEAL</span>
+        <span class="brand-badge">ADS</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#introduction" class="nav-link">Introduction</a></li>
+          <li><a href="#probleme" class="nav-link">Le Problème</a></li>
+          <li><a href="#solution" class="nav-link">Notre Solution</a></li>
+          <li><a href="#distributeurs" class="nav-link">Nos Distributeurs</a></li>
+          <li><a href="#implantations" class="nav-link">Implantations</a></li>
+          <li><a href="#fonctionnement" class="nav-link">SmartMeal Ads</a></li>
+          <li><a href="#plateforme" class="nav-link">Plateforme</a></li>
+          <li><a href="#modele" class="nav-link">Modèle Économique</a></li>
+          <li><a href="#technologie" class="nav-link">Architecture</a></li>
+          <li><a href="#fondateurs" class="nav-link">Fondateurs</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#plateforme" class="btn btn-primary btn-sm">Simulateur Ads</a>
+        <button class="mobile-menu-toggle" aria-label="Menu Mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       SECTION 1 : PAGE D'ACCUEIL (HERO SECTION)
+       ======================================================================= -->
+  <section id="hero" class="hero">
+    <div class="container">
+      
+      <!-- BANDEAU D'INTRODUCTION & NOTE DES FONDATEURS AU CHEF DE DÉPARTEMENT -->
+      <div id="introduction" class="founders-intro-banner">
+        <div class="founders-intro-grid">
+          <div class="founders-avatar-badge">
+            👨‍💻👨‍💻
+          </div>
+          <div class="founders-intro-text">
+            <h4>
+              <span>Mot des Fondateurs : Ziouane Fethi &amp; Mejdoub El Mahdi</span>
+              <span class="badge-status-pfe">Projet Actif &bull; 2 Mois de Travaux</span>
+            </h4>
+            <p>
+              « Je m'appelle <strong>Ziouane Fethi</strong> et mon binôme est <strong>Mejdoub El Mahdi</strong>. Nous travaillons activement sur ce projet depuis deux mois. Durant cette première phase d'ingénierie, nous avons déjà développé un <strong>premier prototype fonctionnel</strong> dédié à la technologie de communication et de pilotage avec le distributeur (cartes électroniques, liaisons de données et interfaçage des écrans). Aujourd'hui, nous avons besoin de soutien et de financements pour fabriquer l'infrastructure complète à échelle réelle. Mais le schéma d'ingénierie, l'architecture logicielle et les chemins précis à suivre sont déjà parfaitement clairs et construits dans nos têtes. »
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="prototype-tag-pill">
+              <span style="color: #059669;">✔</span> Prototype communication validé
+            </div>
+            <div class="prototype-tag-pill">
+              <span style="color: #0284c7;">🎯</span> Recherche de financements
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            Projet Innovant &bull; Ingénierie & Distribution Connectée
+          </div>
+
+          <h1 class="hero-title">
+            SMART<span class="text-gradient">MEAL</span>
+          </h1>
+
+          <span class="hero-slogan">
+            « Bien plus qu'un distributeur automatique. »
+          </span>
+
+          <p class="hero-text">
+            SMARTMEAL est un concept de startup qui associe la distribution automatique de produits alimentaires à un réseau de supports publicitaires numériques intégrés aux distributeurs. Une solution qui transforme chaque point de distribution en une nouvelle opportunité de communication commerciale.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#solution" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Découvrir le concept
+            </a>
+            <a href="#plateforme" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Explorer la plateforme publicitaire
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>2 en 1</h4>
+              <p>Service Alimentaire + Régie Pub</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Écrans Physiques Intégrés</p>
+            </div>
+            <div class="stat-item">
+              <h4>SaaS</h4>
+              <p>Réservation & Pilotage Cloud</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-card" data-photo="overview" title="Cliquer pour agrandir la photographie">
+            <img src="images/smartmeal-overview.jpg" alt="Distributeur SmartMeal avec écrans publicitaires et interfaces web/mobile" loading="eager">
+            
+            <div class="hero-floating-badge badge-top-left">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <div>
+                <p style="font-size: 0.72rem; color: #64748b; text-transform: uppercase;">Infrastructure</p>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Double Écran HD Latéral</strong>
+              </div>
+            </div>
+
+            <div class="hero-floating-badge badge-bottom-right">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <p style="font-size: 0.72rem; color: #64748b; text-transform: uppercase;">Innovation Business</p>
+                <strong style="font-size: 0.85rem; color: #0f172a;">Monétisation Publicitaire</strong>
+              </div>
+            </div>
+          </div>
+          <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">
+            🔍 Cliquez sur l'image pour l'examiner en haute résolution
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 2 : LE PROBLÈME (DOUBLE CONSTAT)
+       ======================================================================= -->
+  <section id="probleme" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Analyse du Besoin</span>
+        <h2 class="section-title">Deux Défis du Quotidien, <span class="text-gradient">Une Solution Synergique</span></h2>
+        <p class="section-desc">
+          Notre analyse sur le terrain dans les campus et les établissements a mis en lumière deux problématiques complémentaires qui ne trouvent pas de réponse intégrée dans les dispositifs traditionnels.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+        <!-- Problème A -->
+        <div class="problem-card">
+          <div class="problem-icon-wrapper icon-red">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          </div>
+          <span style="font-size: 0.8rem; text-transform: uppercase; color: #dc2626; font-weight: 700; letter-spacing: 0.5px;">Défi Utilisateur</span>
+          <h3>Problème A : L'Accès aux Produits Alimentaires</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px;">
+            Dans les universités, hôpitaux, administrations ou entreprises, les usagers et le personnel font face à des contraintes horaires majeures :
+          </p>
+          <ul class="problem-list">
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Fermeture précoce des cafétérias traditionnelles en soirée ou les week-ends.</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Files d'attente interminables durant les courtes pauses intercours ou professionnelles.</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Manque d'options fraîches, variées et équilibrées à proximité immédiate des usagers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Problème B -->
+        <div class="problem-card card-b">
+          <div class="problem-icon-wrapper icon-blue">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <span style="font-size: 0.8rem; text-transform: uppercase; color: #0284c7; font-weight: 700; letter-spacing: 0.5px;">Défi Commercial</span>
+          <h3>Problème B : Les Opportunités Publicitaires Ciblées</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px;">
+            Les entreprises régionales recherchent des supports de communication visibles dans des lieux fréquentés et ciblés :
+          </p>
+          <ul class="problem-list">
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Panneaux d'affichage extérieurs traditionnels statiques, coûteux et sans flexibilité.</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Impossibilité pour un annonceur de cibler un établissement précis (étudiants en tech, corps médical, etc.).</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span>Absence de supports numériques interactifs situés exactement aux points d'attente et de convivialité.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 3 : NOTRE SOLUTION (Duo Piliers)
+       ======================================================================= -->
+  <section id="solution" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Notre Réponse</span>
+        <h2 class="section-title">Deux Piliers Complémentaires, <span class="text-gradient">Une Expérience Unique</span></h2>
+        <p class="section-desc">
+          SMARTMEAL fusionne la distribution automatisée de proximité avec la puissance de la communication visuelle numérique connectée.
+        </p>
+      </div>
+
+      <div class="solution-grid">
+        <!-- Pilier 1 -->
+        <div class="pillar-card">
+          <div class="pillar-img-wrap" data-photo="machine-detail" title="Examiner le distributeur alimentaire">
+            <img src="images/smartmeal-machine-detail.jpg" alt="SMARTMEAL FOOD - Distributeur de snacks et boissons">
+            <span class="pillar-badge-float">Pilier 1 &bull; Service</span>
+          </div>
+          <div class="pillar-content">
+            <h3>SMARTMEAL FOOD</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Un réseau de distributeurs automatiques nouvelle génération permettant l'achat rapide et sécurisé de produits alimentaires sélectionnés :
+            </p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">🥪 Sandwichs & Repas frais</span>
+              <span class="pillar-tag">🍪 Snacks & En-cas</span>
+              <span class="pillar-tag">🧃 Boissons fraîches</span>
+              <span class="pillar-tag">☕ Café haute qualité</span>
+              <span class="pillar-tag">💳 Paiement sans contact</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 18px;">
+              Objectif : Fournir une solution alimentaire hygiénique, disponible 24/7 dans les lieux à forte affluence.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilier 2 -->
+        <div class="pillar-card">
+          <div class="pillar-img-wrap" data-photo="overview" title="Examiner les écrans publicitaires SMARTMEAL ADS">
+            <img src="images/smartmeal-overview.jpg" alt="SMARTMEAL ADS - Écrans publicitaires numériques intégrés">
+            <span class="pillar-badge-float" style="border-color: #0284c7; color: #0284c7;">Pilier 2 &bull; Innovation</span>
+          </div>
+          <div class="pillar-content">
+            <h3>SMARTMEAL ADS</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              La véritable rupture technologique : de véritables écrans numériques haute définition intégrés physiquement à la carrosserie des distributeurs :
+            </p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">📺 Écran latéral gauche HD</span>
+              <span class="pillar-tag">📺 Écran latéral droit HD</span>
+              <span class="pillar-tag">🎬 Diffusion vidéo & dynamique</span>
+              <span class="pillar-tag">📡 Pilotage cloud à distance</span>
+              <span class="pillar-tag">📊 Statistiques de passages</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 18px;">
+              Important : Il ne s'agit pas de simples autocollants, mais d'une infrastructure d'affichage dynamique pilotée à distance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeau Synergie -->
+      <div class="synergy-banner">
+        <div class="synergy-text">
+          <h4>La Synergie SMARTMEAL : Pourquoi cette alliance fonctionne ?</h4>
+          <p>
+            L'utilisateur qui s'approche pour prendre un café ou un sandwich est naturellement exposé à l'écran latéral. Le distributeur amortit son implantation physique par la publicité, tout en offrant aux annonceurs un temps d'attention captif exceptionnel.
+          </p>
+        </div>
+        <a href="#fonctionnement" class="btn btn-outline btn-sm" style="white-space: nowrap;">Comprendre le mécanisme &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 4 : NOS DISTRIBUTEURS (GALERIE PHOTOGRAPHIQUE)
+       ======================================================================= -->
+  <section id="distributeurs" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Galerie Matérielle</span>
+        <h2 class="section-title">Configurations & Modèles <span class="text-gradient">Envisagés</span></h2>
+        <p class="section-desc">
+          Explorez les configurations matérielles issues de nos études de conception. Chaque modèle est adapté à son environnement d'accueil et à ses contraintes spatiales.
+        </p>
+      </div>
+
+      <!-- Filtres -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Tous les modèles</button>
+        <button class="filter-btn" data-filter="dual">Écrans Latéraux</button>
+        <button class="filter-btn" data-filter="coffee">Espace Café / Barista</button>
+        <button class="filter-btn" data-filter="medical">Santé & Médical</button>
+        <button class="filter-btn" data-filter="vision">Concepts & Vision 3D</button>
+      </div>
+
+      <!-- Grille des distributeurs -->
+      <div class="distributors-grid">
+        <!-- Carte 1 -->
+        <div class="distributor-card" data-category="dual">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-machine-detail.jpg" alt="Modèle Phare Duo-Écran">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="machine-detail" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Modèle Phare Duo-Écran</h4>
+            <p class="card-desc">
+              Configuration complète avec vitrine centrale réfrigérée pour sandwichs et boissons, encadrée par deux écrans verticaux haute luminosité (côté gauche et droit).
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Affichage :</span> <strong>2 x Écrans HD 43" verticaux</strong></div>
+              <div class="spec-line"><span>Capacité :</span> <strong>Snacks, Boissons, Frais</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Halls de campus, gares</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="distributor-card" data-category="coffee">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Kiosque Coffee Corner Lounge" style="object-position: center top;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Kiosque Coffee Corner Lounge</h4>
+            <p class="card-desc">
+              Architecture intégrant des lamelles de bois élégantes, un distributeur barista de café en grains et un grand écran publicitaire latéral portrait.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Affichage :</span> <strong>1 x Écran Grand Format</strong></div>
+              <div class="spec-line"><span>Spécialité :</span> <strong>Café moulu & Boissons chaudes</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Espaces détente, coworking</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="distributor-card" data-category="medical">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Modèle Hospitalier Finition Blanche" style="object-position: right top;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Modèle Santé & Hôpital</h4>
+            <p class="card-desc">
+              Carrosserie blanche épurée conçue pour les corridors hospitaliers. Écran latéral dédié à la diffusion de messages de santé publique et d'annonces de proximité.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Affichage :</span> <strong>Écran latéral antireflet</strong></div>
+              <div class="spec-line"><span>Hygiène :</span> <strong>Surfaces antimicrobiennes</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Hôpitaux, cliniques, urgences</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 4 -->
+        <div class="distributor-card" data-category="dual">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-overview.jpg" alt="Configuration Connectée SmartMeal Pro">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="overview" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Station Connectée SmartMeal Pro</h4>
+            <p class="card-desc">
+              Unité intégrant la télémétrie complète : niveau de stock en temps réel, capteurs thermiques et synchronisation continue avec la plateforme web publicitaire.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Connectivité :</span> <strong>Modem 4G/LTE sécurisé</strong></div>
+              <div class="spec-line"><span>Contrôleur :</span> <strong>Player d'affichage embarqué</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Grands flux de passage</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 5 -->
+        <div class="distributor-card" data-category="coffee">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Distributeur Compact Pause Café" style="object-position: 30% bottom;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Compact « Pause Café »</h4>
+            <p class="card-desc">
+              Encombrement réduit pour couloirs et administrations, combinant distribution automatisée de boissons chaudes et écran multimédia vertical.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Empreinte au sol :</span> <strong>Format compact (< 1 m²)</strong></div>
+              <div class="spec-line"><span>Affichage :</span> <strong>Écran latéral interactif</strong></div>
+              <div class="spec-line"><span>Usage idéal :</span> <strong>Administrations, étages de bureaux</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 6 -->
+        <div class="distributor-card" data-category="vision">
+          <div class="card-thumb-wrap">
+            <img src="images/smartmeal-configurations.jpg" alt="Concept Visionnaire Holographique 3D" style="object-position: right bottom;">
+            <div class="zoom-overlay">
+              <button class="zoom-btn" data-photo="configurations" title="Agrandir">🔍</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Concept Hologramme 3D (R&D)</h4>
+            <p class="card-desc">
+              Étude de faisabilité pour intégrer au sommet du distributeur un projecteur holographique à pales LED créant une animation visuelle flottante au-dessus de la machine.
+            </p>
+            <div class="card-specs">
+              <div class="spec-line"><span>Technologie :</span> <strong>Hologramme POV à pales LED</strong></div>
+              <div class="spec-line"><span>Statut :</span> <strong>Perspective d'évolution / R&D</strong></div>
+              <div class="spec-line"><span>Effet :</span> <strong>Attractivité visuelle à 360°</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 30px; font-style: italic;">
+        * Note académique : Les modèles présentés correspondent à nos concepts visuels et configurations matérielles étudiées. Ils illustrent la polyvalence d'implantation du système.
+      </p>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 5 : OÙ INSTALLER SMARTMEAL ?
+       ======================================================================= -->
+  <section id="implantations" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Stratégie d'Implantation</span>
+        <h2 class="section-title">Des Emplacements Stratégiques à <span class="text-gradient">Forte Fréquentation</span></h2>
+        <p class="section-desc">
+          Le succès de SMARTMEAL repose sur le choix minutieux des lieux d'installation, où la demande alimentaire est constante et l'audience publicitaire captive.
+        </p>
+      </div>
+
+      <div class="locations-container">
+        <!-- Navigation par onglets -->
+        <div class="locations-nav">
+          <div class="location-tab-btn active" data-location="university">
+            <div class="loc-icon">🎓</div>
+            <div class="loc-info">
+              <h4>Universités & Campus</h4>
+              <p>Facultés des sciences, technologie, médecine...</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="hospital">
+            <div class="loc-icon">🏥</div>
+            <div class="loc-info">
+              <h4>Hôpitaux & Cliniques</h4>
+              <p>Halls d'urgences, consultations et couloirs soignants</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="admin">
+            <div class="loc-icon">🏛️</div>
+            <div class="loc-info">
+              <h4>Administrations Publiques</h4>
+              <p>Directions ministérielles, préfectures et mairies</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="corporate">
+            <div class="loc-icon">💼</div>
+            <div class="loc-info">
+              <h4>Entreprises & Sièges Sociaux</h4>
+              <p>Parcs d'activités, tours tertiaires et centres d'affaires</p>
+            </div>
+          </div>
+
+          <div class="location-tab-btn" data-location="transit">
+            <div class="loc-icon">✈️</div>
+            <div class="loc-info">
+              <h4>Transports & Aéroports</h4>
+              <p>Gares ferroviaires, aérogares et pôles d'échange</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boîte d'affichage dynamique -->
+        <div class="location-display-box">
+          <div class="location-display-img" data-photo="locations" title="Cliquer pour voir la planche d'implantation">
+            <img id="loc-display-img" src="images/smartmeal-locations.jpg" alt="Implantation SmartMeal dans différents lieux">
+          </div>
+          <div class="location-display-details">
+            <span class="loc-tag-badge" id="loc-display-tag">Enseignement Supérieur</span>
+            <h3 id="loc-display-title">Universités, Grandes Écoles & Campus</h3>
+            <p id="loc-display-desc" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Répondre aux besoins des étudiants et des enseignants qui ont des horaires chargés, tout en offrant aux annonceurs un accès direct et captif à la jeunesse estudiantine.
+            </p>
+
+            <div class="loc-grid-meta">
+              <div class="meta-box">
+                <h5>Public Concerné :</h5>
+                <p id="loc-display-public">Étudiants, enseignants, chercheurs et personnel administratif.</p>
+              </div>
+              <div class="meta-box">
+                <h5>Fréquentation Estimée :</h5>
+                <p id="loc-display-traffic">2 500 à 10 000+ passages quotidiens par campus.</p>
+              </div>
+              <div class="meta-box">
+                <h5>Intérêt Distribution :</h5>
+                <p id="loc-display-benefit">Disponibilité continue lors des révisions, examens et pauses intercours.</p>
+              </div>
+              <div class="meta-box">
+                <h5>Cible Annonceurs :</h5>
+                <p id="loc-display-ad">Idéal pour marques télécoms, applications, formations, banques jeunes, snacking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 6 : COMMENT FONCTIONNE SMARTMEAL ADS ? (5 ÉTAPES)
+       ======================================================================= -->
+  <section id="fonctionnement" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Parcours Annonceur</span>
+        <h2 class="section-title">Comment Fonctionne <span class="text-gradient">SMARTMEAL ADS ?</span></h2>
+        <p class="section-desc">
+          Une plateforme libre-service intuitive pensée pour simplifier la réservation d'espaces publicitaires numériques en 5 étapes fluides.
+        </p>
+      </div>
+
+      <!-- Stepper en 5 cartes -->
+      <div class="steps-stepper">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Choisir un Lieu</h4>
+          <p>L'annonceur explore la carte géographique et cible un établissement (Université, Hôpital, Entreprise...).</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Choisir la Machine</h4>
+          <p>Il sélectionne le distributeur précis installé dans le hall ou le couloir le plus fréquenté.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Sélectionner l'Écran</h4>
+          <p>Il choisit l'orientation de son affichage : écran latéral droit, latéral gauche ou façade.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Créer la Campagne</h4>
+          <p>Il importe son clip vidéo ou son visuel haute définition et définit les dates de diffusion.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h4>Confirmer & Suivre</h4>
+          <p>Validation transparente du budget et suivi en temps réel des passages sur son tableau de bord.</p>
+        </div>
+      </div>
+
+      <!-- Vitrine photos de l'application -->
+      <div class="step-showcase">
+        <div class="showcase-grid">
+          <div class="showcase-img-wrap" data-photo="mobile-3steps" title="Voir l'interface sur 3 smartphones">
+            <img src="images/mobile-3steps-flow.jpg" alt="3 smartphones montrant les étapes de planification de campagne">
+          </div>
+          <div class="showcase-content">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--brand-500); font-weight: 700;">Expérience Mobile & Web</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin: 8px 0 16px 0;">
+              Une Planification Fluide Directement sur Smartphone
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+              Comme le démontrent nos maquettes conceptuelles d'interfaces, l'annonceur accède à un système de réservation calqué sur les meilleurs standards du numérique : calendrier interactif des disponibilités, calcul automatique des créneaux et validation instantanée.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#plateforme" class="btn btn-primary btn-sm">Tester le simulateur en direct &darr;</a>
+              <button class="btn btn-outline btn-sm" data-photo="mobile-calendar">Voir le calendrier mobile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 7 : DÉCOUVRIR LA PLATEFORME (SIMULATEUR INTERACTIF)
+       ======================================================================= -->
+  <section id="plateforme" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Démonstration Interactive</span>
+        <h2 class="section-title">Simulateur de Réservation <span class="text-gradient">SMARTMEAL ADS</span></h2>
+        <p class="section-desc">
+          Testez vous-même le parcours d'un annonceur : choisissez un établissement, personnalisez votre spot et visualisez en temps réel son rendu sur l'écran du distributeur virtuel.
+        </p>
+      </div>
+
+      <!-- Galerie des interfaces réelles -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+        <div class="glass-card" style="padding: 20px; cursor: pointer;" data-photo="platform-dashboard" title="Agrandir l'interface web SaaS">
+          <img src="images/platform-laptop-dashboard.jpg" alt="Tableau de bord SmartMeal Pro sur MacBook" style="width: 100%; border-radius: 10px; margin-bottom: 12px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">Portail Web Annonceur &bull; SmartMeal Pro</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">Formulaire de saisie de campagne sur grand écran avec cartographie des distributeurs.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 20px; cursor: pointer;" data-photo="mobile-planner" title="Agrandir l'interface mobile">
+          <img src="images/mobile-interactive-planner.jpg" alt="Application mobile SmartMeal Campaign Planner" style="width: 100%; border-radius: 10px; margin-bottom: 12px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">Application Mobile &bull; Campaign Planner</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">Gestion géolocalisée et validation rapide depuis un smartphone sur le terrain.</p>
+        </div>
+      </div>
+
+      <!-- Le Simulateur Interactif Fonctionnel -->
+      <div class="simulator-wrapper">
+        <div class="simulator-header">
+          <div class="sim-title-group">
+            <h3>Console de Simulation de Campagne</h3>
+            <p>Module interactif de prévisualisation publicitaire pour jurys et partenaires</p>
+          </div>
+          <span class="sim-badge-demo">Démonstration Interactive Locale</span>
+        </div>
+
+        <div class="simulator-body">
+          <!-- Contrôles du simulateur -->
+          <div class="simulator-controls">
+            <!-- Choix établissement -->
+            <div class="form-group-sim">
+              <label for="sim-select-location">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                1. Établissement et Distributeur Cible :
+              </label>
+              <select id="sim-select-location">
+                <option value="Université d'Oran - Faculté de Technologie (Distributeur U-001)">Université d'Oran - Faculté de Technologie (Distributeur U-001)</option>
+                <option value="Hôpital 1er Novembre - Hall Central des Consultations (Distributeur H-002)">Hôpital 1er Novembre - Hall Central (Distributeur H-002)</option>
+                <option value="Direction des Services Administratifs (Distributeur A-003)">Direction des Services Administratifs (Distributeur A-003)</option>
+                <option value="Centre d'Affaires & Tour Tertiaire (Distributeur E-004)">Centre d'Affaires & Tour Tertiaire (Distributeur E-004)</option>
+                <option value="Aéroport International - Terminal Principal (Distributeur T-005)">Aéroport International - Terminal (Distributeur T-005)</option>
+              </select>
+            </div>
+
+            <!-- Choix écran -->
+            <div class="form-group-sim">
+              <label>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                2. Emplacement de l'Écran Numérique :
+              </label>
+              <div class="screen-picker-grid">
+                <div class="screen-choice-btn active" data-screen="Écran Latéral Droit">Écran Latéral Droit</div>
+                <div class="screen-choice-btn" data-screen="Écran Latéral Gauche">Écran Latéral Gauche</div>
+                <div class="screen-choice-btn" data-screen="Écran Façade Supérieure">Écran Façade</div>
+              </div>
+            </div>
+
+            <!-- Choix de l'annonce d'exemple -->
+            <div class="form-group-sim">
+              <label>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                3. Sélectionner un Visuel d'Annonceur (ou saisir le vôtre) :
+              </label>
+              <div class="custom-ad-selector">
+                <div class="ad-preset-btn active" data-preset="moment">MOMENT Chocolat</div>
+                <div class="ad-preset-btn" data-preset="juice">FreshJuice Bio</div>
+                <div class="ad-preset-btn" data-preset="campus">Campus Tech</div>
+                <div class="ad-preset-btn" data-preset="coffee">Smart Barista</div>
+              </div>
+              <input type="text" id="sim-custom-text" placeholder="Ou tapez un slogan personnalisé pour tester..." style="margin-top: 8px;">
+            </div>
+
+            <!-- Choix de la durée -->
+            <div class="form-group-sim">
+              <label>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                4. Durée de la Campagne de Diffusion :
+              </label>
+              <div class="duration-selector">
+                <div class="duration-btn" data-days="3">3 Jours</div>
+                <div class="duration-btn" data-days="7">7 Jours</div>
+                <div class="duration-btn active" data-days="15">15 Jours</div>
+                <div class="duration-btn" data-days="30">30 Jours</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rendu de prévisualisation et devis indicatif -->
+          <div class="simulator-preview">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--brand-500);">
+                  Rendu Visuel sur l'Écran
+                </span>
+                <span id="sim-screen-side-label" style="font-size: 0.75rem; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
+                  Écran Latéral Droit
+                </span>
+              </div>
+
+              <!-- Écran virtuel dynamique -->
+              <div class="virtual-machine-stage">
+                <div class="machine-mockup-frame">
+                  <div class="virtual-screen-slot">
+                    <div id="sim-screen-content" class="virtual-screen-content" style="background: linear-gradient(135deg, #2b1810 0%, #170d09 100%);">
+                      <span id="sim-screen-badge" style="font-size: 0.65rem; font-weight: 800; color: #f59e0b; text-transform: uppercase; margin-bottom: 6px;">Spot Vidéo 15s HD</span>
+                      <h5 id="sim-screen-title" style="color: #fff;">MOMENT Chocolat Noir</h5>
+                      <p id="sim-screen-slogan" style="color: #e2e8f0;">L'intensité du cacao pur pour recharger vos journées !</p>
+                    </div>
+                  </div>
+                  <div style="font-size: 0.65rem; color: #94a3b8; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.8px;">
+                    Distributeur Connecté SMARTMEAL
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Récapitulatif indicatif -->
+            <div class="recap-card">
+              <h4>
+                <span>Récapitulatif de la Campagne</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </h4>
+              <div class="recap-row">
+                <span>Site ciblé :</span>
+                <strong id="recap-location" style="max-width: 200px; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Université d'Oran</strong>
+              </div>
+              <div class="recap-row">
+                <span>Support :</span>
+                <strong id="recap-screen">Écran Latéral Droit</strong>
+              </div>
+              <div class="recap-row">
+                <span>Période :</span>
+                <strong id="recap-duration">15 jours</strong>
+              </div>
+              <div class="recap-row">
+                <span>Fréquence estimée :</span>
+                <strong id="recap-spots">~720 passages (env. 48/jour)</strong>
+              </div>
+
+              <div class="recap-total">
+                <span>Budget Estimé :</span>
+                <strong id="recap-total">165 € HT (Simulation)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 8 : NOTRE MODÈLE ÉCONOMIQUE
+       ======================================================================= -->
+  <section id="modele" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Viabilité Financière</span>
+        <h2 class="section-title">Un Modèle Économique à <span class="text-gradient">Double Flux de Revenus</span></h2>
+        <p class="section-desc">
+          En mariant vente physique de produits alimentaires et commercialisation d'espaces publicitaires numériques, SMARTMEAL diversifie ses rentrées et maximise la rentabilité de chaque distributeur implanté.
+        </p>
+      </div>
+
+      <div class="business-grid">
+        <!-- Flux 1 -->
+        <div class="business-card">
+          <span class="revenue-badge">Source de Revenus N°1</span>
+          <h3>Distribution Alimentaire & Snacking</h3>
+          <p>
+            Revenus traditionnels issus de la marge commerciale directe sur les produits consommés quotidiennement :
+          </p>
+          <ul class="problem-list" style="margin-bottom: 20px;">
+            <li><span class="bullet" style="color: var(--brand-500);">&check;</span> Vente au détail de sandwichs, salades fraîches et plats préparés.</li>
+            <li><span class="bullet" style="color: var(--brand-500);">&check;</span> Vente de boissons chaudes (café expresso de qualité, thés, chocolats).</li>
+            <li><span class="bullet" style="color: var(--brand-500);">&check;</span> Vente de boissons fraîches, jus pressés, eaux minérales et snacks.</li>
+          </ul>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+            <strong>Levier :</strong> Rotation rapide des stocks grâce à l'affluence continue des campus et administrations.
+          </div>
+        </div>
+
+        <!-- Flux 2 -->
+        <div class="business-card">
+          <span class="revenue-badge" style="border-color: #0284c7; color: #0284c7; background: #f0f9ff;">Source de Revenus N°2</span>
+          <h3>Régie Publicitaire Numérique (SmartMeal Ads)</h3>
+          <p>
+            Monétisation de l'attention visuelle générée autour des machines grâce à la location d'espaces écrans programmables :
+          </p>
+          <ul class="problem-list" style="margin-bottom: 20px;">
+            <li><span class="bullet" style="color: #0284c7;">&check;</span> Réservations de campagnes sur mesure par les annonceurs locaux et nationaux.</li>
+            <li><span class="bullet" style="color: #0284c7;">&check;</span> Tarification dynamique selon la durée (courte durée, hebdomadaire, mensuelle).</li>
+            <li><span class="bullet" style="color: #0284c7;">&check;</span> Forfaits multi-machines pour une couverture à l'échelle d'une ville ou d'une région.</li>
+          </ul>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+            <strong>Levier :</strong> Rentabilisation complémentaire à coût marginal quasi nul une fois l'écran installé.
+          </div>
+        </div>
+      </div>
+
+      <!-- Formules commerciales -->
+      <div class="commercial-options-grid">
+        <div class="comm-opt-box">
+          <h5>Campagnes Événementielles</h5>
+          <p>Diffusion ciblée de 3 à 5 jours pour salons, lancements de produits ou portes ouvertes.</p>
+        </div>
+        <div class="comm-opt-box">
+          <h5>Diffusion Longue Durée</h5>
+          <p>Visibilité institutionnelle continue sur 1 à 6 mois pour ancrer la notoriété d'une marque.</p>
+        </div>
+        <div class="comm-opt-box">
+          <h5>Pack Réseau Multi-Sites</h5>
+          <p>Campagne synchronisée sur 5, 10 ou 20 distributeurs répartis sur l'ensemble d'une agglomération.</p>
+        </div>
+        <div class="comm-opt-box">
+          <h5>Partenariats Exclusifs</h5>
+          <p>Sponsoring exclusif d'un distributeur avec habillage de marque et exclusivité sectorielle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 9 : ARCHITECTURE ET DIMENSION TECHNOLOGIQUE
+       ======================================================================= -->
+  <section id="technologie" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Vision Ingénieur</span>
+        <h2 class="section-title">Architecture Système & <span class="text-gradient">Dimension Technique</span></h2>
+        <p class="section-desc">
+          En tant qu'étudiants ingénieurs, nous avons structuré SMARTMEAL autour d'une architecture modulaire associant électromécanique industrielle, électronique embarquée et infrastructure cloud.
+        </p>
+      </div>
+
+      <div class="tech-diagram">
+        <!-- Bloc Physique / Embarqué -->
+        <div class="tech-block">
+          <div class="tech-block-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/></svg>
+            Partie Physique & Automate
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <i>⚙️</i>
+              <div>
+                <strong>Automate de distribution :</strong> Gestion des moteurs hélicoïdaux et poussoirs de délivrance des produits (déjà éprouvé sur notre banc de test).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>❄️</i>
+              <div>
+                <strong>Régulation thermique :</strong> Capteurs et asservissement de température pour maintien de la chaîne du froid (3°C - 5°C).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>💳</i>
+              <div>
+                <strong>Système d'encaissement :</strong> Monnayeur électronique et lecteur bancaire sans contact (NFC).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>🖥️</i>
+              <div>
+                <strong>Écrans numériques intégrés :</strong> Dalles industrielles haute luminosité protégées contre le vandalisme.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pont de connexion -->
+        <div class="tech-bridge">
+          <div class="bridge-pulse">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">IoT & 4G/LTE</span>
+        </div>
+
+        <!-- Bloc Numérique / Cloud -->
+        <div class="tech-block">
+          <div class="tech-block-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            Partie Numérique & Cloud
+          </div>
+          <div class="tech-list">
+            <div class="tech-item">
+              <i>🌐</i>
+              <div>
+                <strong>Plateforme SmartMeal Ads :</strong> Serveur centralisé de gestion des campagnes et planification des diffusions.
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>📡</i>
+              <div>
+                <strong>Passerelle de synchronisation :</strong> Transmission chiffrée des contenus médias et ordonnancement des playlists (technologie déjà testée sur prototype).
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>📊</i>
+              <div>
+                <strong>Télémétrie en temps réel :</strong> Remontée instantanée des alertes de pannes et état des stocks.
+              </div>
+            </div>
+            <div class="tech-item">
+              <i>🛡️</i>
+              <div>
+                <strong>Supervision sécurisée :</strong> Tableau de bord administrateur avec contrôle à distance des machines.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-quote">
+        « Une plateforme centralisée permettrait de gérer les campagnes publicitaires et de transmettre les contenus aux écrans des distributeurs connectés en temps réel, garantissant une flexibilité d'affichage totale pour nos partenaires annonceurs. »
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 10 : PERSPECTIVES D'ÉVOLUTION
+       ======================================================================= -->
+  <section id="perspectives" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Feuille de Route</span>
+        <h2 class="section-title">Perspectives d'Évolution & <span class="text-gradient">Innovations Futures</span></h2>
+        <p class="section-desc">
+          Notre projet est conçu avec une architecture évolutive qui permettra d'intégrer des technologies de pointe au fur et à mesure du développement de la startup.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 1</span>
+          <div style="font-size: 1.8rem;">🏙️</div>
+          <h4>Extension Régionale & Multi-Villes</h4>
+          <p>Déploiement progressif du réseau de distributeurs sur les principaux pôles universitaires et hospitaliers du pays.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 2</span>
+          <div style="font-size: 1.8rem;">📦</div>
+          <h4>Gestion Intelligente des Stocks</h4>
+          <p>Algorithmes prédictifs pour optimiser les tournées de réassort en fonction des pics de consommation par établissement.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 3</span>
+          <div style="font-size: 1.8rem;">👁️</div>
+          <h4>Mesure d'Audience Anonymisée</h4>
+          <p>Intégration de capteurs optiques respectueux de la vie privée (sans enregistrement) pour quantifier l'exposition réelle aux écrans.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Phase 4</span>
+          <div style="font-size: 1.8rem;">📱</div>
+          <h4>Application Mobile Utilisateur</h4>
+          <p>Réservation à distance d'un produit, programme de fidélité et paiement mobile directement depuis son smartphone.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">R&D Future</span>
+          <div style="font-size: 1.8rem;">✨</div>
+          <h4>Affichage Holographique 3D</h4>
+          <p>Étude approfondie de faisabilité pour implémenter un dispositif visuel flottant au sommet des distributeurs haut de gamme.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-badge">Impact</span>
+          <div style="font-size: 1.8rem;">🌱</div>
+          <h4>Éco-Conception & Anti-Gaspillage</h4>
+          <p>Tarification dynamique en fin de journée pour réduire le gaspillage alimentaire sur les produits ultra-frais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 11 : LES FONDATEURS
+       ======================================================================= -->
+  <section id="fondateurs" class="section">
+    <div class="container">
+      <div class="founders-card">
+        <div class="founders-header">
+          <span class="section-tag" style="margin-bottom: 12px;">Porteurs du Projet</span>
+          <h3>Ziouane Fethi &amp; Mejdoub El Mahdi</h3>
+          <p class="subtitle">Étudiants Ingénieurs &bull; Innovateurs &bull; Porteurs du Projet SMARTMEAL</p>
+        </div>
+
+        <p class="founders-quote">
+          « Nous travaillons ensemble sur ce projet depuis deux mois. Notre premier prototype de communication avec le distributeur a prouvé la faisabilité technique du système. Aujourd'hui, avec le soutien et les financements adéquats, nous sommes prêts à concrétiser l'ensemble de l'architecture que nous avons déjà entièrement planifiée dans nos têtes. »
+        </p>
+
+        <div class="founders-pillars">
+          <div class="pillar-pill"><span>⚡</span> Innovation</div>
+          <div class="pillar-pill"><span>🔧</span> Ingénierie</div>
+          <div class="pillar-pill"><span>🤖</span> Automatisation</div>
+          <div class="pillar-pill"><span>🚀</span> Entrepreneuriat</div>
+          <div class="pillar-pill"><span>💡</span> Résolution de Problèmes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 12 : CONCLUSION & VISION
+       ======================================================================= -->
+  <section id="conclusion" class="section section-alt">
+    <div class="container">
+      <div class="conclusion-box">
+        <span class="section-tag" style="background: var(--brand-50); border-color: var(--brand-500); color: var(--brand-600);">Notre Vision d'Avenir</span>
+        
+        <h2>
+          « Et si un simple distributeur devenait à la fois un point de service et un nouveau média publicitaire ? »
+        </h2>
+
+        <p class="slogan">
+          SMARTMEAL &bull; « De la distribution à la communication, une nouvelle expérience connectée. »
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;">
+          <a href="#" class="btn btn-primary open-vision-modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Découvrir notre vision
+          </a>
+          <a href="#hero" class="btn btn-outline">
+            Revenir en haut &uarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>SMARTMEAL &bull; SMARTMEAL ADS</h4>
+          <p>
+            Plateforme et réseau de distributeurs automatiques connectés avec régie publicitaire intégrée. Présentation officielle du projet de startup.
+          </p>
+          <p style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
+            Porté par <strong>Ziouane Fethi</strong> &amp; <strong>Mejdoub El Mahdi</strong> &bull; Étudiants Ingénieurs.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#introduction">Mot des Fondateurs</a></li>
+            <li><a href="#probleme">Le Problème</a></li>
+            <li><a href="#solution">Notre Solution</a></li>
+            <li><a href="#distributeurs">Galerie Distributeurs</a></li>
+            <li><a href="#implantations">Lieux d'Implantation</a></li>
+            <li><a href="#fonctionnement">Fonctionnement Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technologies & Équipe</h5>
+          <ul class="footer-links">
+            <li><a href="#plateforme">Simulateur de Campagnes</a></li>
+            <li><a href="#modele">Modèle Économique</a></li>
+            <li><a href="#technologie">Architecture Technique</a></li>
+            <li><a href="#perspectives">Perspectives d'Évolution</a></li>
+            <li><a href="#fondateurs">Les Fondateurs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 SMARTMEAL. Tous droits réservés. Présentation académique de projet.
+        </div>
+        <div style="color: var(--brand-500); font-weight: 600;">
+          « Un distributeur. Deux expériences. Une nouvelle opportunité commerciale. »
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       MODAL 1 : LIGHTBOX PLEIN ÉCRAN POUR PHOTOGRAPHIES
+       ======================================================================= -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Fermer">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement photo SmartMeal">
+      <div class="lightbox-caption">
+        <h4 id="lightbox-title" style="color: #fff; font-size: 1.15rem; font-weight: 700; margin-bottom: 6px;"></h4>
+        <p id="lightbox-desc" style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.5;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 2 : FICHE SYNTHÈSE VISION & PITCH ACADÉMIQUE
+       ======================================================================= -->
+  <div id="vision-modal" class="lightbox-modal">
+    <div class="lightbox-content" style="background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid var(--border-brand); max-width: 720px; text-align: left; box-shadow: 0 25px 60px rgba(0,0,0,0.3);">
+      <button id="vision-close" class="lightbox-close" style="color: #0f172a; background: #e2e8f0;" aria-label="Fermer">&times;</button>
+      <span class="section-tag" style="margin-bottom: 12px;">Synthèse de Présentation</span>
+      <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 16px;">
+        La Vision SMARTMEAL devant le Jury
+      </h3>
+      <p style="color: #475569; line-height: 1.65; margin-bottom: 20px;">
+        Ce projet illustre l'application concrète des compétences d'ingénieurs au service d'un besoin de marché réel. SMARTMEAL ne se contente pas de distribuer des denrées : chaque machine devient un actif technologique rentabilisé par deux leviers indépendants.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+        <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #059669; border: 1px solid #e2e8f0; border-left-width: 4px;">
+          <strong style="color: #0f172a; font-size: 0.95rem;">1. Rigueur d'ingénierie & Prototype existant :</strong>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">Asservissement thermique, communication établie avec le distributeur et robustesse logicielle.</p>
+        </div>
+        <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #0284c7; border: 1px solid #e2e8f0; border-left-width: 4px;">
+          <strong style="color: #0f172a; font-size: 0.95rem;">2. Modèle d'affaires résilient :</strong>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">La régie publicitaire protège la rentabilité même en période de vacances ou de faible consommation.</p>
+        </div>
+        <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #7c3aed; border: 1px solid #e2e8f0; border-left-width: 4px;">
+          <strong style="color: #0f172a; font-size: 0.95rem;">3. Porteurs engagés & Roadmap limpide :</strong>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">Ziouane Fethi & Mejdoub El Mahdi : une équipe complémentaire avec une vision claire des prochaines étapes.</p>
+        </div>
+      </div>
+
+      <div style="text-align: right;">
+        <a href="#plateforme" class="btn btn-primary btn-sm" onclick="document.getElementById('vision-modal').classList.remove('active'); document.body.style.overflow='';">
+          Voir le simulateur de campagne &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script interactif -->
+  <script>
+
+  // Auto-resolver for image paths (supports both images/subfolder and root folder)
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        const src = this.getAttribute('src');
+        if (src && src.startsWith('images/')) {
+          this.src = src.replace('images/', '');
+        } else if (src && !src.startsWith('images/') && !src.startsWith('http') && !src.startsWith('data:')) {
+          this.src = 'images/' + src;
+        }
+      });
+    });
+  });
+
+
+/**
+ * SMARTMEAL - Application Interactive
+ * Fondateurs : Fethi Ziouane & Majdoub El Mahdi
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollEffects();
+  initNavbar();
+  initLightbox();
+  initDistributorsFilter();
+  initLocationsTabs();
+  initSimulator();
+  initVisionModal();
+});
+
+/* ==========================================================================
+   1. EFFETS DE DÉFILEMENT & NAVBAR
+   ========================================================================== */
+function initScrollEffects() {
+  const progressBar = document.getElementById('scroll-progress');
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', () => {
+    // Barre de progression
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (progressBar) progressBar.style.width = scrolled + '%';
+
+    // Navbar compacte au scroll
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+
+    // Scroll Spy pour les liens actifs
+    updateActiveNavLink();
+  });
+}
+
+function initNavbar() {
+  const toggleBtn = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const isOpen = navLinks.classList.contains('open');
+      toggleBtn.innerHTML = isOpen ? '✕' : '☰';
+    });
+
+    // Fermer le menu lors du clic sur un lien
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        if (toggleBtn) toggleBtn.innerHTML = '☰';
+      });
+    });
+  }
+}
+
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll('section[id]');
+  const scrollPosition = window.scrollY + 180;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+    if (link) {
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+}
+
+/* ==========================================================================
+   2. GALERIE PHOTO & LIGHTBOX ZOOM
+   ========================================================================== */
+const photoData = {
+  'overview': {
+    title: "SmartMeal & Plateforme SmartMeal Pro",
+    desc: "Présentation globale du distributeur intelligent avec doubles écrans dynamiques latéraux, interface de gestion SaaS SmartMeal Pro et application mobile.",
+    src: "images/smartmeal-overview.jpg"
+  },
+  'configurations': {
+    title: "Configurations & Déploiements Envisagés",
+    desc: "Différentes déclinaisons selon le contexte : Université d'Oran, Kiosque Coffee Corner, Hôpital 1er Novembre, Pause Café et concept holographique 3D.",
+    src: "images/smartmeal-configurations.jpg"
+  },
+  'locations': {
+    title: "Implantation dans 4 Environnements Clés",
+    desc: "Étude d'implantation : Universités (étudiants & professeurs), Hôpitaux (personnel soignant & visiteurs), Administrations publiques, et Sièges d'entreprises.",
+    src: "images/smartmeal-locations.jpg"
+  },
+  'mobile-calendar': {
+    title: "SmartMeal Campaign Planner - Calendrier & Disponibilité",
+    desc: "Interface mobile de sélection des créneaux de diffusion et calendrier des disponibilités en direct devant le distributeur.",
+    src: "images/mobile-calendar-booking.jpg"
+  },
+  'mobile-3steps': {
+    title: "Parcours Annonceur en 3 Étapes Faciles",
+    desc: "Visualisation sur 3 smartphones : 1. Choix de la machine, 2. Sélection de la date, 3. Vérification tarifaire & statistiques.",
+    src: "images/mobile-3steps-flow.jpg"
+  },
+  'mobile-machine': {
+    title: "SmartMeal Campaign Planner - Sélection de la Machine",
+    desc: "Carte interactive et fiches détaillées des distributeurs disponibles (Oran Université, Aéroport, Centres commerciaux).",
+    src: "images/mobile-machine-selection.jpg"
+  },
+  'mobile-planner': {
+    title: "Interface Mobile Complète de Planification",
+    desc: "Étapes de création de campagne : carte des emplacements, import du contenu média vidéo/photo, planification et validation.",
+    src: "images/mobile-interactive-planner.jpg"
+  },
+  'machine-detail': {
+    title: "Distributeur SmartMeal - Vue Détaillée Haute Définition",
+    desc: "Architecture physique moderne : vitrine réfrigérée pour produits frais, deux grands écrans numériques latéraux haute luminosité et système de paiement sans contact.",
+    src: "images/smartmeal-machine-detail.jpg"
+  },
+  'platform-dashboard': {
+    title: "Plateforme Marketing SmartMeal Pro sur Ordinateur",
+    desc: "Tableau de bord annonceur complet : formulaire de nouvelle demande d'annonce, cartographie des écrans réservés et récapitulatif budgétaire.",
+    src: "images/platform-laptop-dashboard.jpg"
+  }
+};
+
+function initLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  const imgEl = document.getElementById('lightbox-img');
+  const titleEl = document.getElementById('lightbox-title');
+  const descEl = document.getElementById('lightbox-desc');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  if (!modal) return;
+
+  // Ouvrir lightbox pour les éléments avec data-photo
+  document.querySelectorAll('[data-photo]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const photoKey = el.getAttribute('data-photo');
+      const data = photoData[photoKey];
+      if (data) {
+        imgEl.src = data.src;
+        titleEl.textContent = data.title;
+        descEl.textContent = data.desc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Fermer
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+function initDistributorsFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.distributor-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(() => { card.style.display = 'none'; }, 200);
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   3. SECTION OÙ INSTALLER (ONGLETS INTERACTIFS)
+   ========================================================================== */
+const locationsData = {
+  university: {
+    tag: "Enseignement Supérieur",
+    title: "Universités, Grandes Écoles & Campus",
+    desc: "Répondre aux besoins des étudiants et des enseignants qui ont des horaires chargés, tout en offrant aux annonceurs un accès direct et captif à la jeunesse estudiantine.",
+    public: "Étudiants, enseignants, chercheurs et personnel administratif.",
+    traffic: "2 500 à 10 000+ passages quotidiens par campus.",
+    benefit: "Disponibilité continue lors des révisions, examens et pauses intercours.",
+    adValue: "Idéal pour marques télécoms, applications, formations, banques jeunes, snacking.",
+    highlightImg: "images/smartmeal-locations.jpg"
+  },
+  hospital: {
+    tag: "Milieu Hospitalier & Médical",
+    title: "Hôpitaux, Cliniques & Centres de Soins",
+    desc: "Fournir une offre alimentaire saine, hygiénique et accessible 24h/24 pour le personnel soignant aux horaires décalés, les patients et leurs familles.",
+    public: "Médecins, infirmiers, personnel soignant, patients et visiteurs.",
+    traffic: "Fréquentation 24h/24 et 7j/7 sans interruption.",
+    benefit: "Accès continu à des repas équilibrés lors des gardes de nuit.",
+    adValue: "Affichage de messages de prévention santé, bien-être et services de proximité.",
+    highlightImg: "images/smartmeal-locations.jpg"
+  },
+  admin: {
+    tag: "Services Publics",
+    title: "Administrations & Établissements Publics",
+    desc: "Moderniser les espaces d'accueil du public et les sièges administratifs en proposant une solution de restauration automatique design et connectée.",
+    public: "Citoyens en démarche administrative et agents de la fonction publique.",
+    traffic: "Flux continu en heures ouvrables avec temps d'attente prolongé.",
+    benefit: "Temps d'attente transformé en moment de pause et de détente.",
+    adValue: "Campagnes de sensibilisation civique, services d'assurance et d'utilité publique.",
+    highlightImg: "images/smartmeal-locations.jpg"
+  },
+  corporate: {
+    tag: "Monde de l'Entreprise",
+    title: "Sièges Sociaux, Parcs Tertiaires & Coworking",
+    desc: "Valoriser la qualité de vie au travail (QVT) grâce à un coin café et snacking haut de gamme, doté d'écrans capables de relayer des communications internes ou corporate.",
+    public: "Collaborateurs, cadres, ingénieurs et visiteurs d'affaires.",
+    traffic: "Pics de consommation le matin, le midi et les pauses d'après-midi.",
+    benefit: "Gain de temps sur la pause déjeuner et renforcement de la convivialité.",
+    adValue: "Sponsors B2B, recrutement, solutions logicielles professionnelles et événements.",
+    highlightImg: "images/smartmeal-locations.jpg"
+  },
+  transit: {
+    tag: "Mobilité & Flux",
+    title: "Gares, Aéroports & Pôles d'Échange",
+    desc: "Capturer des flux de voyageurs en transit rapide recherchant une collation immédiate et qualifiée avant leur départ.",
+    public: "Voyageurs nationaux, internationaux, pendulaires et navetteurs.",
+    traffic: "Flux massif continu à très haute visibilité visuelle.",
+    benefit: "Disponibilité immédiate sans attente aux guichets.",
+    adValue: "Visibilité maximale pour marques grand public, tourisme et téléphonie.",
+    highlightImg: "images/smartmeal-locations.jpg"
+  }
+};
+
+function initLocationsTabs() {
+  const buttons = document.querySelectorAll('.location-tab-btn');
+  const tagEl = document.getElementById('loc-display-tag');
+  const titleEl = document.getElementById('loc-display-title');
+  const descEl = document.getElementById('loc-display-desc');
+  const publicEl = document.getElementById('loc-display-public');
+  const trafficEl = document.getElementById('loc-display-traffic');
+  const benefitEl = document.getElementById('loc-display-benefit');
+  const adValueEl = document.getElementById('loc-display-ad');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const locKey = btn.getAttribute('data-location');
+      const data = locationsData[locKey];
+
+      if (data) {
+        if (tagEl) tagEl.textContent = data.tag;
+        if (titleEl) titleEl.textContent = data.title;
+        if (descEl) descEl.textContent = data.desc;
+        if (publicEl) publicEl.textContent = data.public;
+        if (trafficEl) trafficEl.textContent = data.traffic;
+        if (benefitEl) benefitEl.textContent = data.benefit;
+        if (adValueEl) adValueEl.textContent = data.adValue;
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   4. SIMULATEUR DE CAMPAGNE PUBLICITAIRE SMARTMEAL ADS
+   ========================================================================== */
+const simulatorData = {
+  presets: {
+    moment: {
+      name: "MOMENT Chocolat Noir",
+      slogan: "L'intensité du cacao pur pour recharger vos journées !",
+      bg: "linear-gradient(135deg, #2b1810 0%, #170d09 100%)",
+      color: "#f59e0b",
+      badge: "Spot Vidéo 15s HD",
+      type: "Alimentaire & Snacking"
+    },
+    juice: {
+      name: "FreshJuice Bio & Pressé",
+      slogan: "100% Fruits naturels sans sucres ajoutés. Fraîcheur garantie.",
+      bg: "linear-gradient(135deg, #14532d 0%, #064e3b 100%)",
+      color: "#34d399",
+      badge: "Animation Dynamique",
+      type: "Boissons Saines"
+    },
+    campus: {
+      name: "Campus Tech Hackathon 2026",
+      slogan: "Rejoignez l'élite des développeurs et ingénieurs. Inscriptions ouvertes !",
+      bg: "linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%)",
+      color: "#818cf8",
+      badge: "Campagne Étudiante",
+      type: "Événement & Éducation"
+    },
+    coffee: {
+      name: "Espresso Smart Barista",
+      slogan: "Un café d'exception torréfié localement. Good coffee, good mood !",
+      bg: "linear-gradient(135deg, #3f2e21 0%, #1c140d 100%)",
+      color: "#d97706",
+      badge: "Image Haute Définition",
+      type: "Pause Café"
+    }
+  },
+  dailyRates: {
+    3: 15,
+    7: 13,
+    15: 11,
+    30: 9
+  }
+};
+
+let currentSimState = {
+  location: "Université d'Oran - Faculté de Technologie (Distributeur U-001)",
+  screen: "Écran Latéral Droit",
+  presetKey: "moment",
+  customTitle: "",
+  duration: 15,
+  spotsPerDay: 48
+};
+
+function initSimulator() {
+  const locSelect = document.getElementById('sim-select-location');
+  const screenBtns = document.querySelectorAll('.screen-choice-btn');
+  const durationBtns = document.querySelectorAll('.duration-btn');
+  const presetBtns = document.querySelectorAll('.ad-preset-btn');
+  const customInput = document.getElementById('sim-custom-text');
+
+  // Choix établissement
+  locSelect?.addEventListener('change', (e) => {
+    currentSimState.location = e.target.value;
+    updateSimulator();
+  });
+
+  // Choix écran
+  screenBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      screenBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSimState.screen = btn.getAttribute('data-screen');
+      updateSimulator();
+    });
+  });
+
+  // Choix durée
+  durationBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      durationBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSimState.duration = parseInt(btn.getAttribute('data-days'), 10);
+      updateSimulator();
+    });
+  });
+
+  // Choix preset annonce
+  presetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      presetBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSimState.presetKey = btn.getAttribute('data-preset');
+      if (customInput) customInput.value = '';
+      currentSimState.customTitle = '';
+      updateSimulator();
+    });
+  });
+
+  // Titre personnalisé d'annonce
+  customInput?.addEventListener('input', (e) => {
+    currentSimState.customTitle = e.target.value.trim();
+    updateSimulator();
+  });
+
+  // Initialisation au chargement
+  updateSimulator();
+}
+
+function updateSimulator() {
+  const preset = simulatorData.presets[currentSimState.presetKey] || simulatorData.presets.moment;
+  const title = currentSimState.customTitle || preset.name;
+  
+  // Écran virtuel
+  const screenSlot = document.getElementById('sim-screen-content');
+  const screenBadge = document.getElementById('sim-screen-badge');
+  const screenTitle = document.getElementById('sim-screen-title');
+  const screenSlogan = document.getElementById('sim-screen-slogan');
+  const screenSideLabel = document.getElementById('sim-screen-side-label');
+
+  if (screenSlot) {
+    screenSlot.style.background = preset.bg;
+  }
+  if (screenBadge) {
+    screenBadge.textContent = preset.badge;
+    screenBadge.style.color = preset.color;
+  }
+  if (screenTitle) {
+    screenTitle.textContent = title;
+  }
+  if (screenSlogan) {
+    screenSlogan.textContent = preset.slogan;
+  }
+  if (screenSideLabel) {
+    screenSideLabel.textContent = currentSimState.screen;
+  }
+
+  // Calcul transparent indicatif de démonstration
+  const dailyRate = simulatorData.dailyRates[currentSimState.duration] || 11;
+  const totalCost = dailyRate * currentSimState.duration;
+  const totalSpots = currentSimState.spotsPerDay * currentSimState.duration;
+
+  // Récapitulatif
+  const recapLoc = document.getElementById('recap-location');
+  const recapScreen = document.getElementById('recap-screen');
+  const recapDuration = document.getElementById('recap-duration');
+  const recapSpots = document.getElementById('recap-spots');
+  const recapTotal = document.getElementById('recap-total');
+
+  if (recapLoc) recapLoc.textContent = currentSimState.location;
+  if (recapScreen) recapScreen.textContent = currentSimState.screen;
+  if (recapDuration) recapDuration.textContent = `${currentSimState.duration} jours`;
+  if (recapSpots) recapSpots.textContent = `~${totalSpots.toLocaleString()} passages (env. ${currentSimState.spotsPerDay}/jour)`;
+  if (recapTotal) recapTotal.textContent = `${totalCost} € HT (Simulation)`;
+}
+
+/* ==========================================================================
+   5. MODAL DE VISION & PRÉSENTATION DU PROJET
+   ========================================================================== */
+function initVisionModal() {
+  const openBtns = document.querySelectorAll('.open-vision-modal');
+  const modal = document.getElementById('vision-modal');
+  const closeBtn = document.getElementById('vision-close');
+
+  if (!modal) return;
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeVision() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn?.addEventListener('click', closeVision);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeVision();
+  });
+}
+
+</script>
+</body>
+</html>
