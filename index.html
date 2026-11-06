@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SMARTMEAL | Bien plus qu'un distributeur automatique</title>
-  <meta name="description" content="SMARTMEAL associe la distribution alimentaire intelligente à un réseau d'écrans publicitaires numériques connectés (SMARTMEAL ADS). Projet porté par Ziouane Fethi & Mejdoub El Mahdi.">
+  <meta name="description" content="SMARTMEAL associe la distribution alimentaire intelligente à un réseau d'écrans publicitaires numériques connectés (SMARTMEAL ADS). Projet porté par Ziouane Fethi & Medjdoub ELMehdi.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
@@ -20,7 +20,7 @@
    SMARTMEAL - SYSTÈME DE DESIGN & FEUILLES DE STYLE (MODE CLAIR / LIGHT THEME)
    Charte graphique : Blanc pur, Gris clair technologique (#f8fafc, #f1f5f9),
    Vert technologique émeraude (#059669, #10b981) & Ardoise sombre (#0f172a, #1e293b).
-   Auteurs : Ziouane Fethi & Mejdoub El Mahdi
+   Auteurs : Ziouane Fethi & Medjdoub ELMehdi
    ========================================================================== */
 
 :root {
@@ -1944,9 +1944,508 @@ body {
   }
 }
 
+
+/* ==========================================================================
+   ÉCRAN D'OUVERTURE SUSPENSE (TEASER CINÉMATIQUE)
+   ========================================================================== */
+.suspense-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  background-color: #030712;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 24px;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.suspense-overlay.hidden {
+  opacity: 0;
+  transform: scale(1.04);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.suspense-backdrop {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 40%, rgba(5, 150, 105, 0.22) 0%, transparent 65%),
+    radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, rgba(3, 7, 18, 0.7) 0%, #030712 100%);
+  pointer-events: none;
+}
+
+.suspense-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, transparent 70%);
+  filter: blur(60px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulseGlow 5s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+.suspense-content {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  text-align: center;
+  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suspense-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  margin-bottom: 28px;
+}
+
+.suspense-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: blinkDot 1.5s infinite;
+}
+
+@keyframes blinkDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.suspense-question {
+  font-size: clamp(1.85rem, 4.3vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.suspense-question .highlight-green {
+  color: #34d399;
+  text-decoration: underline;
+  text-decoration-color: rgba(52, 211, 153, 0.4);
+  text-underline-offset: 6px;
+}
+
+.suspense-question .highlight-glow {
+  background: linear-gradient(135deg, #34d399 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.suspense-founders {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.suspense-founders strong {
+  color: #f1f5f9;
+  font-weight: 700;
+}
+
+.suspense-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-suspense-enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.45), 0 10px 25px rgba(0,0,0,0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.3px;
+}
+
+.btn-suspense-enter:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 50px rgba(16, 185, 129, 0.65), 0 14px 32px rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.btn-suspense-enter:active {
+  transform: scale(0.98);
+}
+
+.suspense-hint {
+  font-size: 0.82rem;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.suspense-footer-note {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #475569;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   AMÉLIORATION NAVBAR & BOUTON SIMULATEUR ADS (AUCUN CHEVAUCHEMENT)
+   ========================================================================== */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.nav-sim-btn {
+  white-space: nowrap;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.btn-teaser-replay {
+  background: var(--brand-50);
+  border: 1px solid var(--border-brand);
+  color: var(--brand-600);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.btn-teaser-replay:hover {
+  background: var(--brand-500);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   CARTE D'ÉTABLISSEMENT DANS LA CONSOLE DE SIMULATION
+   ========================================================================== */
+.sim-location-card {
+  margin-top: 14px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.sim-location-card:hover {
+  border-color: var(--brand-500);
+  background: #f0fdf4;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.sim-location-img-wrap {
+  width: 140px;
+  height: 96px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid #cbd5e1;
+  background: #0f172a;
+}
+
+.sim-location-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.sim-location-card:hover .sim-location-img-wrap img {
+  transform: scale(1.08);
+}
+
+.sim-location-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.sim-location-zoom-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(5, 150, 105, 0.92);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2px 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.sim-location-card:hover .sim-location-zoom-hint {
+  opacity: 1;
+}
+
+.sim-location-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.sim-location-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.sim-location-head h5 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sim-machine-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--brand-100);
+  color: var(--brand-700);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.sim-location-details p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sim-location-metrics {
+  display: flex;
+  gap: 16px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.duration-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 6px;
+}
+
+.duration-btn small {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.duration-btn.active small {
+  opacity: 1;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Responsive breakpoint update for navbar */
+@media (max-width: 1120px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 24px;
+    border-bottom: 2px solid var(--border-glass);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+    gap: 14px;
+    z-index: 1001;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .sim-location-card {
+    flex-direction: column;
+  }
+  .sim-location-img-wrap {
+    width: 100%;
+    height: 120px;
+  }
+  .btn-teaser-replay {
+    display: none;
+  }
+}
+
 </style>
 </head>
 <body>
+
+  <!-- =======================================================================
+       ÉCRAN D'OUVERTURE SUSPENSE (TEASER CINÉMATIQUE)
+       ======================================================================= -->
+  <aside id="suspense-overlay" class="suspense-overlay" aria-label="Introduction interactive">
+    <div class="suspense-backdrop"></div>
+    <div class="suspense-glow"></div>
+    
+    <div class="suspense-content">
+      <div class="suspense-badge">
+        <span class="suspense-dot"></span>
+        <span>Innovation Technologique &bull; SMARTMEAL</span>
+      </div>
+
+      <h1 class="suspense-question">
+        « Et si un simple distributeur devenait à la fois <span class="highlight-green">un point de service</span> et <span class="highlight-glow">un nouveau média publicitaire ?</span> »
+      </h1>
+
+      <p class="suspense-founders">
+        Une vision d'ingénierie et d'entrepreneuriat conçue et portée par<br>
+        <strong>Ziouane Fethi</strong> &amp; <strong>Medjdoub ELMehdi</strong>
+      </p>
+
+      <div class="suspense-actions">
+        <button id="btn-enter-site" class="btn-suspense-enter" autofocus>
+          <span>Entrer dans l'expérience SMARTMEAL</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <span class="suspense-hint">Appuyez sur <kbd>Entrée</kbd> ou cliquez pour accéder au site</span>
+      </div>
+    </div>
+
+    <div class="suspense-footer-note">
+      <span>Faculté de Technologie &bull; Projet de Fin d'Études &bull; Startup Connectée</span>
+    </div>
+  </aside>
+
 
   <!-- Barre de progression au scroll -->
   <div id="scroll-progress"></div>
@@ -1967,20 +2466,24 @@ body {
       <nav>
         <ul class="nav-links">
           <li><a href="#introduction" class="nav-link">Introduction</a></li>
-          <li><a href="#probleme" class="nav-link">Le Problème</a></li>
-          <li><a href="#solution" class="nav-link">Notre Solution</a></li>
-          <li><a href="#distributeurs" class="nav-link">Nos Distributeurs</a></li>
+          <li><a href="#solution" class="nav-link">Concept</a></li>
+          <li><a href="#distributeurs" class="nav-link">Distributeurs</a></li>
           <li><a href="#implantations" class="nav-link">Implantations</a></li>
           <li><a href="#fonctionnement" class="nav-link">SmartMeal Ads</a></li>
-          <li><a href="#plateforme" class="nav-link">Plateforme</a></li>
-          <li><a href="#modele" class="nav-link">Modèle Économique</a></li>
+          <li><a href="#modele" class="nav-link">Modèle Éco</a></li>
           <li><a href="#technologie" class="nav-link">Architecture</a></li>
           <li><a href="#fondateurs" class="nav-link">Fondateurs</a></li>
         </ul>
       </nav>
 
       <div class="nav-cta">
-        <a href="#plateforme" class="btn btn-primary btn-sm">Simulateur Ads</a>
+        <button id="btn-replay-teaser" class="btn-teaser-replay" title="Revoir l'introduction suspense">
+          ⚡ Teaser
+        </button>
+        <a href="#plateforme" class="btn btn-primary btn-sm nav-sim-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Simulateur Ads
+        </a>
         <button class="mobile-menu-toggle" aria-label="Menu Mobile">☰</button>
       </div>
     </div>
@@ -2000,11 +2503,11 @@ body {
           </div>
           <div class="founders-intro-text">
             <h4>
-              <span>Mot des Fondateurs : Ziouane Fethi &amp; Mejdoub El Mahdi</span>
+              <span>Mot des Fondateurs : Ziouane Fethi &amp; Medjdoub ELMehdi</span>
               <span class="badge-status-pfe">Projet Actif &bull; 2 Mois de Travaux</span>
             </h4>
             <p>
-              « Je m'appelle <strong>Ziouane Fethi</strong> et mon binôme est <strong>Mejdoub El Mahdi</strong>. Nous travaillons activement sur ce projet depuis deux mois. Durant cette première phase d'ingénierie, nous avons déjà développé un <strong>premier prototype fonctionnel</strong> dédié à la technologie de communication et de pilotage avec le distributeur (cartes électroniques, liaisons de données et interfaçage des écrans). Aujourd'hui, nous avons besoin de soutien et de financements pour fabriquer l'infrastructure complète à échelle réelle. Mais le schéma d'ingénierie, l'architecture logicielle et les chemins précis à suivre sont déjà parfaitement clairs et construits dans nos têtes. »
+              « Je m'appelle <strong>Ziouane Fethi</strong> et mon binôme est <strong>Medjdoub ELMehdi</strong>. Nous travaillons activement sur ce projet depuis deux mois. Durant cette première phase d'ingénierie, nous avons déjà développé un <strong>premier prototype fonctionnel</strong> dédié à la technologie de communication et de pilotage avec le distributeur (cartes électroniques, liaisons de données et interfaçage des écrans). Aujourd'hui, nous avons besoin de soutien et de financements pour fabriquer l'infrastructure complète à échelle réelle. Mais le schéma d'ingénierie, l'architecture logicielle et les chemins précis à suivre sont déjà parfaitement clairs et construits dans nos têtes. »
             </p>
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -2605,12 +3108,32 @@ body {
                 1. Établissement et Distributeur Cible :
               </label>
               <select id="sim-select-location">
-                <option value="Université d'Oran - Faculté de Technologie (Distributeur U-001)">Université d'Oran - Faculté de Technologie (Distributeur U-001)</option>
-                <option value="Hôpital 1er Novembre - Hall Central des Consultations (Distributeur H-002)">Hôpital 1er Novembre - Hall Central (Distributeur H-002)</option>
-                <option value="Direction des Services Administratifs (Distributeur A-003)">Direction des Services Administratifs (Distributeur A-003)</option>
-                <option value="Centre d'Affaires & Tour Tertiaire (Distributeur E-004)">Centre d'Affaires & Tour Tertiaire (Distributeur E-004)</option>
-                <option value="Aéroport International - Terminal Principal (Distributeur T-005)">Aéroport International - Terminal (Distributeur T-005)</option>
+                <option value="univ">Université d'Oran - Faculté de Technologie (Distributeur U-001)</option>
+                <option value="hospital">Hôpital 1er Novembre - Hall Central des Consultations (Distributeur H-002)</option>
+                <option value="admin">Direction des Services Administratifs (Distributeur A-003)</option>
+                <option value="corporate">Centre d'Affaires & Tour Tertiaire (Distributeur E-004)</option>
+                <option value="airport">Aéroport International - Terminal Principal (Distributeur T-005)</option>
               </select>
+
+              <!-- Carte avec Photographie Réelle de l'Établissement -->
+              <div class="sim-location-card" id="sim-location-card" title="Cliquer pour examiner la photo en haute résolution">
+                <div class="sim-location-img-wrap">
+                  <img id="sim-location-img" src="6008031005517746298.jpg" alt="Photo de l'établissement">
+                  <span class="sim-location-badge" id="sim-location-badge">📍 Campus Universitaire</span>
+                  <div class="sim-location-zoom-hint">🔍 Agrandir photo HD</div>
+                </div>
+                <div class="sim-location-details">
+                  <div class="sim-location-head">
+                    <h5 id="sim-location-title">Faculté de Technologie - Université d'Oran</h5>
+                    <span class="sim-machine-pill" id="sim-machine-id">Machine U-001</span>
+                  </div>
+                  <p id="sim-location-desc">Implantation stratégique dans le hall principal et le foyer des étudiants.</p>
+                  <div class="sim-location-metrics">
+                    <span id="sim-metric-traffic">👥 <strong>8 500</strong> passages/jour</span>
+                    <span id="sim-metric-status">🟢 <strong>Connecté</strong></span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Choix écran -->
@@ -2648,10 +3171,22 @@ body {
                 4. Durée de la Campagne de Diffusion :
               </label>
               <div class="duration-selector">
-                <div class="duration-btn" data-days="3">3 Jours</div>
-                <div class="duration-btn" data-days="7">7 Jours</div>
-                <div class="duration-btn active" data-days="15">15 Jours</div>
-                <div class="duration-btn" data-days="30">30 Jours</div>
+                <div class="duration-btn" data-days="3">
+                  <span>3 Jours</span>
+                  <small>7 500 DA</small>
+                </div>
+                <div class="duration-btn" data-days="7">
+                  <span>7 Jours</span>
+                  <small>16 000 DA</small>
+                </div>
+                <div class="duration-btn active" data-days="15">
+                  <span>15 Jours</span>
+                  <small>30 000 DA</small>
+                </div>
+                <div class="duration-btn" data-days="30">
+                  <span>30 Jours</span>
+                  <small>54 000 DA</small>
+                </div>
               </div>
             </div>
           </div>
@@ -2710,7 +3245,7 @@ body {
 
               <div class="recap-total">
                 <span>Budget Estimé :</span>
-                <strong id="recap-total">165 € HT (Simulation)</strong>
+                <strong id="recap-total">30 000 DA (DZD)</strong>
               </div>
             </div>
           </div>
@@ -2954,7 +3489,7 @@ body {
       <div class="founders-card">
         <div class="founders-header">
           <span class="section-tag" style="margin-bottom: 12px;">Porteurs du Projet</span>
-          <h3>Ziouane Fethi &amp; Mejdoub El Mahdi</h3>
+          <h3>Ziouane Fethi &amp; Medjdoub ELMehdi</h3>
           <p class="subtitle">Étudiants Ingénieurs &bull; Innovateurs &bull; Porteurs du Projet SMARTMEAL</p>
         </div>
 
@@ -3012,7 +3547,7 @@ body {
             Plateforme et réseau de distributeurs automatiques connectés avec régie publicitaire intégrée. Présentation officielle du projet de startup.
           </p>
           <p style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            Porté par <strong>Ziouane Fethi</strong> &amp; <strong>Mejdoub El Mahdi</strong> &bull; Étudiants Ingénieurs.
+            Porté par <strong>Ziouane Fethi</strong> &amp; <strong>Medjdoub ELMehdi</strong> &bull; Étudiants Ingénieurs.
           </p>
         </div>
 
@@ -3090,7 +3625,7 @@ body {
         </div>
         <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 3px solid #7c3aed; border: 1px solid #e2e8f0; border-left-width: 4px;">
           <strong style="color: #0f172a; font-size: 0.95rem;">3. Porteurs engagés & Roadmap limpide :</strong>
-          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">Ziouane Fethi & Mejdoub El Mahdi : une équipe complémentaire avec une vision claire des prochaines étapes.</p>
+          <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px;">Ziouane Fethi & Medjdoub ELMehdi : une équipe complémentaire avec une vision claire des prochaines étapes.</p>
         </div>
       </div>
 
@@ -3122,10 +3657,11 @@ body {
 
 /**
  * SMARTMEAL - Application Interactive
- * Fondateurs : Fethi Ziouane & Majdoub El Mahdi
+ * Fondateurs : Ziouane Fethi & Medjdoub ELMehdi
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSuspenseScreen();
   initScrollEffects();
   initNavbar();
   initLightbox();
@@ -3134,6 +3670,39 @@ document.addEventListener('DOMContentLoaded', () => {
   initSimulator();
   initVisionModal();
 });
+
+/* ==========================================================================
+   0. ÉCRAN SUSPENSE & TEASER CINÉMATIQUE
+   ========================================================================== */
+function initSuspenseScreen() {
+  const overlay = document.getElementById('suspense-overlay');
+  const enterBtn = document.getElementById('btn-enter-site');
+  const replayBtn = document.getElementById('btn-replay-teaser');
+
+  if (!overlay) return;
+
+  function enterSite() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  enterBtn?.addEventListener('click', enterSite);
+
+  // Déclencher par Entrée ou Espace
+  window.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('hidden') && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      enterSite();
+    }
+  });
+
+  // Rejouer le teaser
+  replayBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    overlay.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 /* ==========================================================================
    1. EFFETS DE DÉFILEMENT & NAVBAR
@@ -3409,8 +3978,71 @@ function initLocationsTabs() {
 }
 
 /* ==========================================================================
-   4. SIMULATEUR DE CAMPAGNE PUBLICITAIRE SMARTMEAL ADS
+   4. SIMULATEUR DE CAMPAGNE PUBLICITAIRE SMARTMEAL ADS (EN DINARS ALGÉRIENS)
    ========================================================================== */
+const establishmentData = {
+  univ: {
+    key: "univ",
+    name: "Université d'Oran - Faculté de Technologie (Distributeur U-001)",
+    shortTitle: "Faculté de Technologie - Univ Oran",
+    machineId: "Machine U-001",
+    desc: "Implantation stratégique dans le grand hall d'accueil et le foyer des étudiants. Présence continue lors des révisions et pauses.",
+    badge: "📍 Campus Universitaire",
+    traffic: "8 500 passages / jour",
+    status: "🟢 Connecté & Actif",
+    photo: "6008031005517746298.jpg",
+    photoKey: "configurations"
+  },
+  hospital: {
+    key: "hospital",
+    name: "Hôpital 1er Novembre - Hall Central des Consultations (Distributeur H-002)",
+    shortTitle: "CHU & Pôle Médical 1er Novembre",
+    machineId: "Machine H-002",
+    desc: "Positionné dans le hall central des consultations et urgences. Public soignant et familles de patients 24h/24 et 7j/7.",
+    badge: "📍 Milieu Hospitalier",
+    traffic: "12 000 passages / jour (24h/24)",
+    status: "🟢 Connecté & Actif",
+    photo: "6008031005517746298.jpg",
+    photoKey: "configurations"
+  },
+  admin: {
+    key: "admin",
+    name: "Direction des Services Administratifs (Distributeur A-003)",
+    shortTitle: "Pôle Administratif & Guichets",
+    machineId: "Machine A-003",
+    desc: "Hall des démarches citoyennes et bureaux des agents administratifs. Temps d'attente transformé en temps de lecture visuelle.",
+    badge: "📍 Services Publics",
+    traffic: "4 200 passages / jour",
+    status: "🟢 Connecté & Actif",
+    photo: "6008031005517746299.jpg",
+    photoKey: "locations"
+  },
+  corporate: {
+    key: "corporate",
+    name: "Centre d'Affaires & Tour Tertiaire (Distributeur E-004)",
+    shortTitle: "Tour d'Affaires & Coworking",
+    machineId: "Machine E-004",
+    desc: "Espace détente haut de gamme au cœur du pôle tertiaire. Public qualifié de cadres, ingénieurs et chefs d'entreprises.",
+    badge: "📍 Entreprises & B2B",
+    traffic: "3 800 passages / jour",
+    status: "🟢 Connecté & Actif",
+    photo: "6008031005517746304.jpg",
+    photoKey: "machine-detail"
+  },
+  airport: {
+    key: "airport",
+    name: "Aéroport International - Terminal Principal (Distributeur T-005)",
+    shortTitle: "Aéroport International d'Oran",
+    machineId: "Machine T-005",
+    desc: "Hall des départs et zone d'embarquement. Flux massif ininterrompu de passagers nationaux et internationaux.",
+    badge: "📍 Mobilité & Voyageurs",
+    traffic: "15 000+ passagers / jour",
+    status: "🟢 Connecté & Actif",
+    photo: "6008031005517746302.jpg",
+    photoKey: "mobile-machine"
+  }
+};
+
 const simulatorData = {
   presets: {
     moment: {
@@ -3446,16 +4078,17 @@ const simulatorData = {
       type: "Pause Café"
     }
   },
-  dailyRates: {
-    3: 15,
-    7: 13,
-    15: 11,
-    30: 9
+  // Tarification officielle en Dinars Algériens (DA)
+  pricingDZD: {
+    3: { total: 7500, label: "7 500 DA", daily: "2 500 DA/j" },
+    7: { total: 16000, label: "16 000 DA", daily: "~2 285 DA/j" },
+    15: { total: 30000, label: "30 000 DA", daily: "2 000 DA/j" },
+    30: { total: 54000, label: "54 000 DA", daily: "1 800 DA/j" }
   }
 };
 
 let currentSimState = {
-  location: "Université d'Oran - Faculté de Technologie (Distributeur U-001)",
+  locationKey: "univ",
   screen: "Écran Latéral Droit",
   presetKey: "moment",
   customTitle: "",
@@ -3469,11 +4102,28 @@ function initSimulator() {
   const durationBtns = document.querySelectorAll('.duration-btn');
   const presetBtns = document.querySelectorAll('.ad-preset-btn');
   const customInput = document.getElementById('sim-custom-text');
+  const locCard = document.getElementById('sim-location-card');
 
   // Choix établissement
   locSelect?.addEventListener('change', (e) => {
-    currentSimState.location = e.target.value;
+    currentSimState.locationKey = e.target.value;
     updateSimulator();
+  });
+
+  // Clic sur la carte d'établissement pour zoomer la photo
+  locCard?.addEventListener('click', () => {
+    const est = establishmentData[currentSimState.locationKey] || establishmentData.univ;
+    const modal = document.getElementById('lightbox-modal');
+    const imgEl = document.getElementById('lightbox-img');
+    const titleEl = document.getElementById('lightbox-title');
+    const descEl = document.getElementById('lightbox-desc');
+    if (modal && imgEl) {
+      imgEl.src = est.photo;
+      if (titleEl) titleEl.textContent = est.name;
+      if (descEl) descEl.textContent = est.desc + " - Fréquentation : " + est.traffic;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   });
 
   // Choix écran
@@ -3519,50 +4169,59 @@ function initSimulator() {
 }
 
 function updateSimulator() {
+  const est = establishmentData[currentSimState.locationKey] || establishmentData.univ;
   const preset = simulatorData.presets[currentSimState.presetKey] || simulatorData.presets.moment;
   const title = currentSimState.customTitle || preset.name;
   
-  // Écran virtuel
+  // 1. Mettre à jour la carte photographique de l'établissement
+  const locImg = document.getElementById('sim-location-img');
+  const locBadge = document.getElementById('sim-location-badge');
+  const locTitle = document.getElementById('sim-location-title');
+  const locMachine = document.getElementById('sim-machine-id');
+  const locDesc = document.getElementById('sim-location-desc');
+  const locTraffic = document.getElementById('sim-metric-traffic');
+  const locStatus = document.getElementById('sim-metric-status');
+
+  if (locImg) locImg.src = est.photo;
+  if (locBadge) locBadge.textContent = est.badge;
+  if (locTitle) locTitle.textContent = est.shortTitle;
+  if (locMachine) locMachine.textContent = est.machineId;
+  if (locDesc) locDesc.textContent = est.desc;
+  if (locTraffic) locTraffic.innerHTML = `👥 <strong>${est.traffic}</strong>`;
+  if (locStatus) locStatus.innerHTML = `🟢 <strong>${est.status}</strong>`;
+
+  // 2. Écran virtuel dynamique
   const screenSlot = document.getElementById('sim-screen-content');
   const screenBadge = document.getElementById('sim-screen-badge');
   const screenTitle = document.getElementById('sim-screen-title');
   const screenSlogan = document.getElementById('sim-screen-slogan');
   const screenSideLabel = document.getElementById('sim-screen-side-label');
 
-  if (screenSlot) {
-    screenSlot.style.background = preset.bg;
-  }
+  if (screenSlot) screenSlot.style.background = preset.bg;
   if (screenBadge) {
     screenBadge.textContent = preset.badge;
     screenBadge.style.color = preset.color;
   }
-  if (screenTitle) {
-    screenTitle.textContent = title;
-  }
-  if (screenSlogan) {
-    screenSlogan.textContent = preset.slogan;
-  }
-  if (screenSideLabel) {
-    screenSideLabel.textContent = currentSimState.screen;
-  }
+  if (screenTitle) screenTitle.textContent = title;
+  if (screenSlogan) screenSlogan.textContent = preset.slogan;
+  if (screenSideLabel) screenSideLabel.textContent = currentSimState.screen;
 
-  // Calcul transparent indicatif de démonstration
-  const dailyRate = simulatorData.dailyRates[currentSimState.duration] || 11;
-  const totalCost = dailyRate * currentSimState.duration;
+  // 3. Calcul en Dinars Algériens (DA)
+  const priceData = simulatorData.pricingDZD[currentSimState.duration] || { total: 30000, label: "30 000 DA" };
   const totalSpots = currentSimState.spotsPerDay * currentSimState.duration;
 
-  // Récapitulatif
+  // 4. Récapitulatif
   const recapLoc = document.getElementById('recap-location');
   const recapScreen = document.getElementById('recap-screen');
   const recapDuration = document.getElementById('recap-duration');
   const recapSpots = document.getElementById('recap-spots');
   const recapTotal = document.getElementById('recap-total');
 
-  if (recapLoc) recapLoc.textContent = currentSimState.location;
+  if (recapLoc) recapLoc.textContent = est.shortTitle;
   if (recapScreen) recapScreen.textContent = currentSimState.screen;
   if (recapDuration) recapDuration.textContent = `${currentSimState.duration} jours`;
   if (recapSpots) recapSpots.textContent = `~${totalSpots.toLocaleString()} passages (env. ${currentSimState.spotsPerDay}/jour)`;
-  if (recapTotal) recapTotal.textContent = `${totalCost} € HT (Simulation)`;
+  if (recapTotal) recapTotal.textContent = `${priceData.label} (DZD)`;
 }
 
 /* ==========================================================================
